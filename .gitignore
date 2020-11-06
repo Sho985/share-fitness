@@ -25,3 +25,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+#Rspecを使用するため通常のtestは使用しない
+/test
