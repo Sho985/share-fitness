@@ -30,4 +30,4 @@
 /test
 
 #carriewaveで保存した画像
-app/uploaders/
+public/uploads/
