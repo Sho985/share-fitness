@@ -23,6 +23,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 #ユーザー機能をdeviseで作成
 gem 'devise'
+#画像保存機能
+gem 'carrierwave'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
