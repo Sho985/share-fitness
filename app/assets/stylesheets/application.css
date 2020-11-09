@@ -33,3 +33,15 @@ a:hover{
 .buttons a{
   color: #DDFFFF;
 }
+
+.notice {
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.alert {
+  background-color: red;
+  color: white;
+  text-align: center;
+}
