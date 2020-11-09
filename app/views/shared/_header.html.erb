@@ -1,12 +1,25 @@
 <header>
 	<div class="header-menu">
 		<div class="app-name">
-			<p>Share | fitness</p>
+      <nav>
+        <ul>
+          <li><%= link_to "Share | fitness", root_path %></li>
+        </ul>
+      </nav>
 		</div>
-		<div class="header-link">
-			<p style="color:#006666;">Signup</p>
-			<p>MyRecord</p>
-			<p>AllRecord</p>
+    <div class="header-link">
+      <nav>
+        <ul>
+        <% if user_signed_in? %>
+          <li><%= link_to current_user.name, user_path(current_user) %></li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li style="color:#006666;"><%= link_to "Signup", new_user_registration_path %></li>
+          <li><%= link_to "Login", new_user_session_path %></li>
+          <li>AllRecord</li>
+        <% end%>
+        </ul>
+      </nav>
     </div>
   </div>
   <!-- inputid と labelfor　で 同じ名前をつけることで、labelをクリックしてinputにチェックを入れたり外せる-->
@@ -18,10 +31,14 @@
       <label for="menu"  class="close">×</label>
       <nav>
         <ul>
-          <li>Mypage</li>
-          <li>Record</li>
-          <li>AllRecord</li>
-          <li>Logout</li>
+          <% if user_signed_in? %>
+            <li><%= link_to 'Mypage', user_path(current_user) %></li>
+            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li style="color:#006666;"><%= link_to "Signup", new_user_registration_path %></li>
+            <li><%= link_to "Login", new_user_session_path %></li>
+            <li>AllRecord</li>
+          <% end%>
         </ul>
       </nav>
     </aside>
