@@ -1,0 +1,42 @@
+<div class="postform-background">
+  <div class="postform-box">
+    <div class="postform">
+      <%= form_with model: @post do |f| %>
+
+        <h2>New Posts</h2>
+        
+        <div class="form">
+          <%= f.label :comment %><br />
+          <%= f.text_area :comment,class: "input-field" %>
+        </div>
+
+        <div class="form">
+          <%= f.label :part  %><br />
+          <%= f.select :part,  [["Chest", "Chest"],["Shoulder", "Shoulder"], ["Arm","Arm"],["Back","Back"],["Leg","Leg"],["Abs","Abs"],["Others","Others"] ] , include_blank: "トレーニング部位を選択して下さい" %>
+        </div>
+
+        <div class="form">
+          <%= f.label :discipline %><br />
+          <%= f.text_field :discipline,class: "input-field" %>
+        </div>
+
+        <div class="form">
+          <%= f.label :weight %><br />
+          <%= f.number_field :weight, placeholder: "kg",class: "input-field"  %>
+        </div>
+
+        <div class="form">
+          <%= f.label :number %><br />
+          <%= f.number_field :number,class: "input-field" %>
+        </div>
+
+        <div class="form">
+          <%= f.label :image %><br />
+          <%= f.file_field :image,class: "input-field" %>
+        </div>
+        
+        <%= f.submit "新規投稿"%>
+      <% end %>
+    </div>
+  </div>
+</div>
