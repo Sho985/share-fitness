@@ -19,6 +19,12 @@
         font-size: 1.8vw;
         line-height: 1.5;
         margin: 0 auto;
+        font-family: 'Avenir Next',sans-serif;
+
+        .comment-field{
+          width: 100%;
+          height: 8rem;
+        }
 
         .trainning-menu{
           margin-top: 10px;
@@ -34,6 +40,11 @@
             //color: white;
           }
 
+          .part-discipline-form{
+            width: 100%;
+            display: flex;
+          }
+
           .weight-and-number-form{
             width: 100%;
             display: flex;
@@ -41,7 +52,7 @@
         }
 
         .input-field{
-          width: 98%;
+          width: 100%;
           padding-top: 0px;
         }
       }
