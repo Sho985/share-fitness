@@ -3,11 +3,11 @@
     <div class="postform">
       <%= form_with model: @post do |f| %>
 
-        <h4>New Posts</h4>
+        <h4>-Record-</h4>
         
         <div class="form">
           <%= f.label :comment %> <i class="far fa-comment"></i><br />
-          <%= f.text_area :comment, placeholder: "今日のトレーニングはどうだった？",class: "input-field" %>
+          <%= f.text_area :comment, placeholder: "今日のトレーニングはどうだった？",class: "comment-field" %>
         </div>
 
         <div class="form">
@@ -17,14 +17,16 @@
 
         <div class="trainning-menu"> 
         
-        　<h5>種目 / 追加する</h5>
+        　 <h5>New Record !</h5>
 
-          <div class="form">
-            <%= f.select :part,  [["Chest", "Chest"],["Shoulder", "Shoulder"], ["Arm","Arm"],["Back","Back"],["Leg","Leg"],["Abs","Abs"],["Others","Others"] ] , include_blank: "トレーニング部位を選択して下さい" %>
-          </div>
+          <div class="part-discipline-form">
+            <div class="form">
+              <%= f.select :part,  [["Chest", "Chest"],["Shoulder", "Shoulder"], ["Arm","Arm"],["Back","Back"],["Leg","Leg"],["Abs","Abs"],["Others","Others"] ] , include_blank: "トレーニング部位を選択して下さい" %>
+            </div>
 
-          <div class="form">
-            <%= f.text_field :discipline, placeholder: "種目名 例:ベンチプレス",class: "input-field" %>
+            <div class="form">
+              <%= f.text_field :discipline, placeholder: "種目名 例:ベンチプレス",class: "input-field" %>
+            </div>
           </div>
 
           <div class="weight-and-number-form">
@@ -37,18 +39,19 @@
             </div>
 
             <div class="form">
-              <%= f.number_field :number,placeholder: "回数",class: "input-field" %>
+              <%= f.number_field :number,placeholder: "セット数",class: "input-field" %>
             </div>
 
           </div>
 
-          <div class="plus-button">
+          <div class="plus-minus-button">
             <i class="far fa-plus-square"></i>
+            <i class="far fa-minus-square"></i>
           </div>
 
         </div>
 
-        <%= f.submit "新規投稿"%>
+        <%= f.submit "新規投稿",class: "input-field" %>
       <% end %>
     </div>
   </div>
