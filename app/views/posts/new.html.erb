@@ -17,29 +17,31 @@
 
         <div class="trainning-menu"> 
         
-        　 <h5>New Record !</h5>
-
+        　<h5>New Record !</h5>
+          
+          <%= f.fields_for :training_menus do |ff| %>
+          
           <div class="part-discipline-form">
             <div class="form">
-              <%= f.select :part,  [["Chest", "Chest"],["Shoulder", "Shoulder"], ["Arm","Arm"],["Back","Back"],["Leg","Leg"],["Abs","Abs"],["Others","Others"] ] , include_blank: "トレーニング部位を選択して下さい" %>
+              <%= ff.select :part,  [["Chest", "Chest"],["Shoulder", "Shoulder"], ["Arm","Arm"],["Back","Back"],["Leg","Leg"],["Abs","Abs"],["Others","Others"] ] , include_blank: "トレーニング部位を選択して下さい" %>
             </div>
 
             <div class="form">
-              <%= f.text_field :discipline, placeholder: "種目名 例:ベンチプレス",class: "input-field" %>
+              <%= ff.text_field :event, placeholder: "種目名 例:ベンチプレス",class: "input-field" %>
             </div>
           </div>
 
           <div class="weight-and-number-form">
             <div class="form">
-              <%= f.number_field :weight, placeholder: "重さ・kg",class: "input-field"  %>
+              <%= ff.number_field :weight, placeholder: "重さ・kg",class: "input-field"  %>
             </div>
 
             <div class="form">
-              <%= f.number_field :number,placeholder: "回数",class: "input-field" %>
+              <%= ff.number_field :repetition,placeholder: "回数",class: "input-field" %>
             </div>
 
             <div class="form">
-              <%= f.number_field :number,placeholder: "セット数",class: "input-field" %>
+              <%= ff.number_field :set_count,placeholder: "セット数",class: "input-field" %>
             </div>
 
           </div>
@@ -52,6 +54,9 @@
         </div>
 
         <%= f.submit "新規投稿",class: "input-field" %>
+
+        <% end %>
+
       <% end %>
     </div>
   </div>
