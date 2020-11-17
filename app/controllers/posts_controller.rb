@@ -4,6 +4,8 @@ class PostsController < ApplicationController
 
   def new 
     @post = Post.new
+    #postに保存される際にtraining_menusも同時に保存を開始する。
+    @post.training_menus.build
   end
 
   def create
@@ -19,6 +21,7 @@ class PostsController < ApplicationController
     private
 
     def post_params
-      params.require(:post).permit(:part, :discipline, :weight, :number, :comment, :image).merge(user_id: current_user.id)
+      params.require(:post).permit(:comment, :image, 
+      training_menus_attributes: %i[id part event weight repetition set_count]).merge(user_id: current_user.id)
     end
 end
