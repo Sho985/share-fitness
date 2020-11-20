@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   def index
+    @posts = Post.all.includes(:training_menus)
   end
 
   def new 

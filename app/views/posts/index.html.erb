@@ -1,1 +1,37 @@
+<div class="post-box-container">
+  <% @posts.each do |p| %>
+  <div class="post-box">
+    <div class="post-content-box">
+      <div class="post-content">
+        <div class="post-user-info">
+          <img src ='<%= p.user.image %>' class="posts-user-image">
+          <div class="post-user-name"><%= link_to p.user.name, user_path(p.user_id) %></div>
+        </div>
+        <div class="post-user-comment">
+          <%= p.comment %>
+        </div>
+        <% p.training_menus.each do |pp| %>
+        <div class="post-training-menu">
+          部位:<%= pp.part %><br>
+          <%= pp.event %>
+          <%= pp.weight %>kg
+          <%= pp.repetition %>rep
+          <%= pp.set_count %>set
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="post-reaction-box">
+      <div class="post-reaction-content">
+        <div class="post-like-button">
+          <i class="fas fa-thumbs-up"></i>
+        </div>
+        <div class="post-comment-button">
+          <i class="fas fa-comments"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+<div>
 
