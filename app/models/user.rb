@@ -10,4 +10,6 @@ class User < ApplicationRecord
   
   #carriewave・Userモデルとの紐付け
   mount_uploader :image,  UserimageUploader
+
+  has_many :posts
 end
