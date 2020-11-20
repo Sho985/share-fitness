@@ -11,11 +11,12 @@
       <nav>
         <ul>
         <% if user_signed_in? %>
-          <li><%= link_to current_user.name, user_path(current_user) %></li>
-          <li><%= link_to "All Record", posts_path %></li>
+          <li><%= link_to "Mypage", user_path(current_user) %></li>
+          <li><%= link_to "Record", new_post_path %></li>
+          <li><%= link_to "All Records", posts_path %></li>
           <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
         <% else %>
-          <li style="color:#006666;"><%= link_to "Signup", new_user_registration_path %></li>
+          <li><%= link_to "Signup", new_user_registration_path %></li>
           <li><%= link_to "Login", new_user_session_path %></li>
           <li><%= link_to "All Record", posts_path %></li>
         <% end%>
@@ -34,10 +35,11 @@
         <ul>
           <% if user_signed_in? %>
             <li><%= link_to 'Mypage', user_path(current_user) %></li>
-            <li><%= link_to "All Record", posts_path %></li>
+            <li><%= link_to "Record", new_post_path %></li>
+            <li><%= link_to "All Records", posts_path %></li>
             <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
           <% else %>
-            <li style="color:#006666;"><%= link_to "Signup", new_user_registration_path %></li>
+            <li><%= link_to "Signup", new_user_registration_path %></li>
             <li><%= link_to "Login", new_user_session_path %></li>
             <li><%= link_to "All Record", posts_path %></li>
           <% end%>
