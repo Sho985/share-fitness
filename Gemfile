@@ -23,6 +23,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 #ユーザー機能をdeviseで作成
 gem 'devise'
+#deviseの日本語化
+gem 'devise-i18n'
+gem 'devise-i18n-views'
 #画像保存機能
 gem 'carrierwave'
 
