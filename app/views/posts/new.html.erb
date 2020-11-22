@@ -1,7 +1,9 @@
 <div class="postform-background">
   <div class="postform-box">
     <div class="postform">
-      <%= form_with model: @post do |f| %>
+    <%= render 'shared/error_messages'%>
+
+      <%= form_with model: @post ,local: true do |f| %>
 
         <h4>-Record-</h4>
         
@@ -19,7 +21,7 @@
         
         　<h5>New Record !</h5>
           
-          <%= f.fields_for :training_menus do |ff| %>
+          <%= f.fields_for :training_menus, @post.training_menus.build do |ff| %>
           
           <div class="part-discipline-form">
             <div class="form">
