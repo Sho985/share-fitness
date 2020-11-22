@@ -21,6 +21,15 @@ body{
   padding-top: 60px;
 }
 
+.field_with_errors {
+  display: inline;
+}
+
+.user-error-message{
+  background-color:#EEEEEE;
+  font-size: 1vw;
+}
+
 a {
   color: black;
   text-decoration: none;　
