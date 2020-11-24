@@ -26,6 +26,8 @@ gem 'devise'
 #deviseの日本語化
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+#Railsの日本語化
+gem 'rails-i18n'
 #画像保存機能
 gem 'carrierwave'
 
