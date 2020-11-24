@@ -1,0 +1,22 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      post: トレーニング記録
+    attributes:
+      user:
+        name: 名前
+        email: メールアドレス
+        password: パスワード
+        image: ユーザー画像
+        self_introduction: 自己紹介
+      post:
+        image: 画像
+        comment: コメント
+        training_menus: トレーニングメニュー
+      post/training_menus:
+        part: トレーニング部位
+        event: 種目
+        weight: 重量
+        repetition: 回数
+        set_count: セット数
