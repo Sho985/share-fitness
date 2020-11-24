@@ -12,8 +12,9 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to root_path
+      redirect_to root_path, notice: 'トレーニング内容を記録しました!'
     else
+      flash.now[:alert] = '記録に失敗しました'
       render 'new'
     end
   end
