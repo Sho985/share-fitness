@@ -1,25 +1,25 @@
 <div class="post-box-container">
-  <% @posts.each do |p| %>
+  <% @posts.each do |post| %>
   <div class="post-box">
     <div class="post-content-box">
       <div class="post-content">
         <div class="post-user-info">
-          <img src ='<%= p.user.image %>' class="post-user-image">
-          <div class="post-user-name"><%= link_to p.user.name, user_path(p.user_id) %></div>
+          <img src ='<%= post.user.image %>' class="post-user-image">
+          <div class="post-user-name"><%= link_to post.user.name, user_path(post.user_id) %></div>
         </div>
         <div class="post-user-comment">
-          <%= p.comment %>
+          <%= post.comment %>
         </div>
-        <% p.training_menus.each do |pp| %>
+        <% post.training_menus.each do |training_menu| %>
         <div class="post-training-menu">
-          部位:<%= pp.part %>/種目:<%= pp.event %><br>
-          <%= pp.weight %>kg
-          <%= pp.repetition %>rep
-          <%= pp.set_count %>set
+          部位:<%= training_menu.part %>/種目:<%= training_menu.event %><br>
+          <%= training_menu.weight %>kg
+          <%= training_menu.repetition %>rep
+          <%= training_menu.set_count %>set
         </div>
         <% end %>
         <div>
-          <img src ='<%= p.image %>' class="post-user-image">
+          <img src ='<%= post.image %>' class="post-user-image">
         </div>
       </div>
     </div>
@@ -30,6 +30,13 @@
         </div>
         <div class="post-comment-button">
           <i class="fas fa-comment"></i>
+        </div>
+        <div class="post-delete-link">
+          <% if post.user_id == current_user.id%>
+            <%=link_to post_path(post),method: :delete , data: {confirm: "本当に削除しますか？"}  do %>
+              <span><i class="fas fa-trash-alt"></i></span>
+            <% end %>
+          <% end %>
         </div>
       </div>
     </div>
