@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   #ユーザーマイページ用のルーティング
   resources :users, :only => [:show]
 
-  resources :posts
+  resources :posts do
+    resource :likes, only: [:create, :destroy]
+  end
 end
