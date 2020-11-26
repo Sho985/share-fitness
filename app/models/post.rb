@@ -8,4 +8,10 @@ class Post < ApplicationRecord
 
   #carriewave・Postモデルとの紐付け
   mount_uploader :image,  PostimageUploader
+  
+  has_many: likes
+  #ユーザーがいいねしているのかを確認するメソッド
+  def liked_by?(user)
+    likes.where(user_id: user.id).exists?
+  end
 end

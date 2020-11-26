@@ -12,4 +12,5 @@ class User < ApplicationRecord
   mount_uploader :image,  UserimageUploader
 
   has_many :posts
+  has_many :likes
 end
