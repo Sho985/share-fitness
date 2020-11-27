@@ -11,6 +11,7 @@ class User < ApplicationRecord
   #carriewave・Userモデルとの紐付け
   mount_uploader :image,  UserimageUploader
 
-  has_many :posts
-  has_many :likes
+  has_many :posts, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :like_posts, through: :likes, source: :post
 end
