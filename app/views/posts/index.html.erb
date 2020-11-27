@@ -26,7 +26,15 @@
     <div class="post-reaction-box">
       <div class="post-reaction-content">
         <div class="post-like-button">
-          <i class="fas fa-thumbs-up"></i>
+          <% if post.liked_by?(current_user)%>
+            <%= link_to post_likes_path(post.id), method: :delete do %>
+              <span class="fas fa-thumbs-up like-btn-unlike">:<%= post.likes.count %></span>
+            <% end %>
+          <% else %>
+            <%= link_to post_likes_path(post.id), method: :post do %>
+              <span class="fas fa-thumbs-up like-btn">:<%= post.likes.count %></span>
+            <% end %>
+          <% end %>
         </div>
         <div class="post-comment-button">
           <i class="fas fa-comment"></i>
