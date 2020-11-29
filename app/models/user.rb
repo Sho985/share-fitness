@@ -14,4 +14,7 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :like_posts, through: :likes, source: :post
+  
+  #commentモデルと関連付け
+  has_many :comments
 end
