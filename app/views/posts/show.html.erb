@@ -1,16 +1,15 @@
 <div class="post-box-container">
-  <% @posts.each do |post| %>
   <div class="post-box">
     <div class="post-content-box">
       <div class="post-content">
         <div class="post-user-info">
-          <img src ='<%= post.user.image %>' class="post-user-image">
-          <div class="post-user-name"><%= link_to post.user.name, user_path(post.user_id) %></div>
+          <img src ='<%= @post.user.image %>' class="post-user-image">
+          <div class="post-user-name"><%= link_to @post.user.name, user_path(@post.user_id) %></div>
         </div>
         <div class="post-user-comment">
-          <%= post.comment %>
+          <%= @post.comment %>
         </div>
-        <% post.training_menus.each do |training_menu| %>
+        <% @post.training_menus.each do |training_menu| %>
         <div class="post-training-menu">
           部位:<%= training_menu.part %>/種目:<%= training_menu.event %><br>
           <%= training_menu.weight %>kg
@@ -19,34 +18,34 @@
         </div>
         <% end %>
         <div>
-          <img src ='<%= post.image %>' class="post-user-image">
+          <img src ='<%= @post.image %>' class="post-user-image">
         </div>
       </div>
     </div>
     <div class="post-reaction-box">
       <div class="post-reaction-content">
         <div class="post-like-button">
-          <% if post.liked_by?(current_user)%>
-            <%= link_to post_likes_path(post.id), method: :delete do %>
-              <span class="fas fa-thumbs-up like-btn-unlike">:<%= post.likes.count %></span>
+          <% if @post.liked_by?(current_user)%>
+            <%= link_to post_likes_path(@post.id), method: :delete do %>
+              <span class="fas fa-thumbs-up like-btn-unlike">:<%= @post.likes.count %></span>
             <% end %>
           <% else %>
-            <%= link_to post_likes_path(post.id), method: :post do %>
-              <span class="fas fa-thumbs-up like-btn">:<%= post.likes.count %></span>
+            <%= link_to post_likes_path(@post.id), method: :post do %>
+              <span class="fas fa-thumbs-up like-btn">:<%= @post.likes.count %></span>
             <% end %>
           <% end %>
         </div>
         <div class="post-comment-button">
-          <%=link_to post_path(post.id) do %>
+          <%=link_to post_path(@post.id) do %>
             <span><i class="fas fa-comment"></i></span>
           <% end %>
         </div>
         <div class="post-edit-delete-link">
-          <% if post.user_id == current_user.id%>
-            <%=link_to edit_post_path(post) do %>
+          <% if @post.user_id == current_user.id%>
+            <%=link_to edit_post_path(@post) do %>
               <span><i class="fas fa-edit"></i></span>
             <% end %>
-            <%=link_to post_path(post),method: :delete , data: {confirm: "本当に削除しますか？"}  do %>
+            <%=link_to post_path(@post),method: :delete , data: {confirm: "本当に削除しますか？"}  do %>
               <span><i class="fas fa-trash-alt"></i></span>
             <% end %>
           <% end %>
@@ -54,6 +53,4 @@
       </div>
     </div>
   </div>
-  <% end %>
 <div>
-

@@ -7,6 +7,10 @@ class PostsController < ApplicationController
     @posts = Post.all.includes(:training_menus).order(created_at: 'DESC')
   end
 
+  def show
+    @post = Post.includes(:training_menus).find(params[:id])
+  end
+
   def new 
     @post = Post.new
     #postに保存される際にtraining_menusも同時に保存を開始する。
