@@ -38,7 +38,7 @@
         </div>
         <div class="post-comment-button">
           <%=link_to post_path(post.id) do %>
-            <span><i class="fas fa-comment"></i></span>
+            <span><i class="far fa-comment"></i>:<%= post.comments.count %></span>
           <% end %>
         </div>
         <div class="post-edit-delete-link">
