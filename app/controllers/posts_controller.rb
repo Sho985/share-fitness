@@ -4,7 +4,8 @@ class PostsController < ApplicationController
   before_action :correct_user, only: [:destroy]
 
   def index
-    @posts = Post.all.includes(:training_menus).order(created_at: 'DESC')
+    @q = Post.all.includes(:training_menus).order(created_at: 'DESC').ransack(params[:q])
+    @posts = @q.result(distinct: true)
   end
 
   def show
