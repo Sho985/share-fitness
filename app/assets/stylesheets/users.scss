@@ -37,6 +37,124 @@
     }
   }
   //signupページ終了
+
+  //user-show-page開始
+  .user-show-page{
+    background-color: #EEEEEE;
+    min-height: 100vh;
+    height: auto;
+    padding-top: 1.5vw;
+
+    .user-info-box{
+      width: 70%;
+      height: 25vw;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      
+      
+      .user-info-content{
+        display: flex;
+        width: 60%;
+        height: 20vw;
+        margin: 0 auto;
+        //border: solid 1px;
+        box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+
+
+        .user-image-box{
+          width: 40%;
+          //border: solid 1px;
+          display: flex;
+          align-items: center;
+          
+          .user-image{
+            margin: 0 auto;
+
+            .info-image{
+              width: 10vw;
+              height: 10vw;
+              border-radius: 50%;
+              box-shadow: 0 5px 15px 0 rgba(0, 0, 0, .5);
+              object-fit: contain;
+            }
+          }
+        }
+
+        .user-introduction-box{
+          display: flex;
+          align-items: center;
+          margin: 0 auto;
+          width: 57%;
+          font-size: 1.4vw;
+
+          .user-introduction-content{
+            margin: 0 auto;
+            width: 100%;
+
+            .user-name-introduction{
+              display: flex;
+
+              .follow-button{
+                margin-left: 1vw;
+              }
+            }
+
+            .user-self-introduction{
+              padding-top: 1vw;
+            }
+          }
+        }
+      }
+    }
+    //user-info-box終了(ユーザーの紹介ボックス)
+    
+    //tab開始
+    .tab-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: 100%;
+        margin: 0 auto;
+    
+      .tab-label {
+          display: flex;
+          justify-content: center;
+          width: 25%;
+          color: #333333;
+          background: LightGray;
+          font-size: 1.2vw;
+          order: -1;
+        
+      }
+      .tab-content {
+          width: 100%;
+          min-height: 60vh;
+          height: auto;
+          display: none;
+
+        .tab-posts{
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+        }  
+      }
+
+      .tab-switch:checked+.tab-label {
+          background: #BBFFFF;
+      }
+      .tab-switch:checked+.tab-label+.tab-content {
+          display: block;
+      }
+
+      .tab-switch {
+          display: none;
+      }
+    }
+    //tab 終了
+  }
+  //user-show-page終了
+
 }
 //PC用scss終了
 
