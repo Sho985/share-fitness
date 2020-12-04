@@ -1,0 +1,29 @@
+.simple-calendar{
+  font-family: 'Avenir Next',sans-serif;
+}
+
+.calendar-heading{
+  font-size: 1.2vw;
+  display: flex;
+  justify-content: center;
+  background-color: #EEEEEE;
+  font-family: 'Avenir Next',sans-serif;
+
+  .calendar-nav{
+    padding: 1vw;
+
+    .calendar-title{
+      font-size: 1.4vw;
+      //color:	blue;
+    }
+  }
+}
+
+
+.wday-6 {
+  background-color: #CCFFFF;
+}
+
+.wday-0 {
+  background-color: #FFBEDA;
+}

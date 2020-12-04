@@ -1,0 +1,10 @@
+<div class="calendar-container">
+  <%= month_calendar events: @posts do |date, posts| %>
+    <%= date %>
+    <% posts.each do |post| %>
+    <div>
+      <%= link_to post.comment, post_path(post) %>
+    </div>
+    <% end %>
+  <% end %>
+</div>

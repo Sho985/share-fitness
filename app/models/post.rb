@@ -17,4 +17,8 @@ class Post < ApplicationRecord
 
   #commentモデルと関連付け
   has_many :comments
+
+  def start_time
+    self.created_at
+  end
 end
