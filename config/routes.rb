@@ -4,9 +4,8 @@ Rails.application.routes.draw do
   
   #ユーザーマイページ用のルーティング
   resources :users, only: [:show] do
-    member do
-      get 'calendar'
-    end
+    get :calendar, on: :member 
+    resource :relationships, only: [:create, :destroy]
   end
 
   resources :posts do
