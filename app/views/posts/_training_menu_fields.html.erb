@@ -1,0 +1,30 @@
+<div class="nested-fields trainning-menu-form"> 
+  <h3>-New Record-</h3>
+    <div class="trainning-menu-form">
+      <%= f.select :part,  [["胸", "胸"],["肩", "肩"], ["腕","腕"],["背中","背中"],["脚","脚"],["腹筋","腹筋"],["その他","その他"] ] , include_blank: "トレーニング部位を選択して下さい"%>
+    </div>
+
+
+  <div class="event-form">
+    <div class="nest-form">
+      <%= f.text_field :event, placeholder: "種目名 例:ベンチプレス",class: "nest-field" %>
+    </div>
+
+    <div class="nest-form">
+      <%= f.number_field :weight, placeholder: "重さ・kg, 例:100",class: "nest-field"  %>
+    </div>
+
+    <div class="nest-form">
+      <%= f.number_field :repetition,placeholder: "回数, 例:5",class: "nest-field"  %>
+    </div>
+
+    <div class="nest-form">
+      <%= f.number_field :set_count,placeholder: "セット数, 例:3",class: "nest-field"  %>
+    </div>  
+
+    <div class="nest-delete-link nest-button-link">
+      <%= link_to_remove_association '削除', f %>
+    </div>
+  </div>
+
+</div>
