@@ -23,9 +23,8 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to root_path, notice: 'トレーニング内容を記録しました!'
+      redirect_to posts_path, notice: 'トレーニング内容を記録しました!'
     else
-      flash.now[:alert] = '記録に失敗しました'
       render 'new'
     end
   end
@@ -36,7 +35,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @post.update(update_post_params)
+    if @post.update(post_params)
       redirect_to posts_path, notice: '更新が完了しました！'
     else
       flash.now[:alert] = '更新に失敗しました'
@@ -53,11 +52,6 @@ class PostsController < ApplicationController
     private
 
     def post_params
-      params.require(:post).permit(:comment, :image, 
-      training_menus_attributes: %i[id part event weight repetition set_count]).merge(user_id: current_user.id)
-    end
-
-    def update_post_params
       params.require(:post).permit(:comment, :image, 
       training_menus_attributes: %i[id part event weight repetition set_count _destroy]).merge(user_id: current_user.id)
     end

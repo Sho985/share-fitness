@@ -1,65 +1,42 @@
-<div class="postform-background">
-  <div class="postform-box">
-    <div class="postform">
+<div class="post-form-background">
+  <div class="post-form-container">
+    <h2>---Record---</h2>
     <%= render 'shared/error_messages'%>
-
       <%= form_with model: @post ,local: true do |f| %>
 
-        <h4>-Edit Record-</h4>
-        
-        <div class="form">
+      <div class="comment-image-form-box">
+        <div class="post-comment-wrap">
           <%= f.label :comment %> <i class="far fa-comment"></i><br />
           <%= f.text_area :comment, placeholder: "今日のトレーニングはどうだった？",class: "comment-field" %>
         </div>
-
-        <div class="form">
-          <%= f.label :image %> <i class="fas fa-images"></i><br />
-          <%= f.file_field :image,class: "input-field" %>
+        <div class="post-image-wrap">
+          <%= f.label :image %> <i class="fas fa-images"></i>
+          <%= f.file_field :image %>
+          <% if @post.image? %>
+            <div class="post-edit-image-wrap">
+              <img src ='<%= @post.image %>' class="post-image">
+              <%= @post.image.url %>
+            </div>
+          <% end %>
         </div>
+      </div>
 
-        <div class="trainning-menu"> 
-        
-        　<h5> Edit　Training menu </h5>
-          
-          <%= f.fields_for :training_menus, @post.training_menus.build do |ff| %>
-          
-          <div class="part-discipline-form">
-            <div class="form">
-              <%= ff.select :part,  [["Chest", "Chest"],["Shoulder", "Shoulder"], ["Arm","Arm"],["Back","Back"],["Leg","Leg"],["Abs","Abs"],["Others","Others"] ] , include_blank: "トレーニング部位を選択して下さい"%>
-            </div>
-
-            <div class="form">
-              <%= ff.text_field :event, placeholder: "種目名 例:ベンチプレス",class: "input-field"%>
-            </div>
-          </div>
-
-          <div class="weight-and-number-form">
-            <div class="form">
-              <%= ff.number_field :weight, placeholder: "重さ・kg",class: "input-field"  %>
-            </div>
-
-            <div class="form">
-              <%= ff.number_field :repetition,placeholder: "回数",class: "input-field" %>
-            </div>
-
-            <div class="form">
-              <%= ff.number_field :set_count,placeholder: "セット数",class: "input-field" %>
-            </div>
-
-          </div>
-
-          <div class="plus-minus-button">
-            <i class="far fa-plus-square"></i>
-            <i class="far fa-minus-square"></i>
-          </div>
-
-        </div>
-
-        <%= f.submit "新規投稿",class: "input-field" %>
-
+      <div class="training-menu-container">
+        <%= f.fields_for :training_menus do |f| %>
+          <%= render "training_menu_fields", f: f %>
         <% end %>
 
-      <% end %>
-    </div>
+        <div class="links">
+          <div class="nest-button-link">
+            <%= link_to_add_association "フォームの追加", f, :training_menus %>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="submit-button">
+        <%= f.submit "記録する",class: "submit" %>
+      </div>
+    <% end %>  
   </div>
 </div>

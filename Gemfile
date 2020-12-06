@@ -34,6 +34,9 @@ gem 'carrierwave'
 gem 'ransack'
 #カレンダー機能
 gem 'simple_calendar'
+#ネストフォームの追加・削除を行えるようにする。
+gem 'cocoon'
+gem "jquery-rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
