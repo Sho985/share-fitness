@@ -37,6 +37,9 @@ gem 'simple_calendar'
 #ネストフォームの追加・削除を行えるようにする。
 gem 'cocoon'
 gem "jquery-rails"
+#グラフ機能
+gem 'chartkick'
+gem 'groupdate'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
