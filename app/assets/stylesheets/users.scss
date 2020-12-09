@@ -46,11 +46,12 @@
     padding-top: 1.5vw;
 
     .user-info-box{
-      width: 70%;
+      width: 80%;
       height: 25vw;
       margin: 0 auto;
       display: flex;
       align-items: center;
+      margin-bottom: 1.2vw;
       
       
       .user-info-content{
@@ -128,6 +129,27 @@
             .user-self-introduction{
               padding-top: 1vw;
             }
+          }
+        }
+      }
+      //user-info-content 終了
+      //グラフ開始
+      .training-graph-container{
+        display: flex;
+        align-items: center;
+        width: 35%;
+        height: 25vw;
+        margin: 0 auto;
+
+        .graph{
+          height: 24vw;
+          width: 23vw;
+          margin: 0 auto;
+          //box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .5);
+          
+          .graph-info{
+            display: flex;
+            justify-content: center;
           }
         }
       }
