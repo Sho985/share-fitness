@@ -4,7 +4,7 @@
     <%= render 'shared/error_messages'%>
       <%= form_with model: @post ,local: true do |f| %>
 
-      <div class="comment-image-form-box">
+      <div class="comment-image-part-form-box">
         <div class="post-comment-wrap">
           <%= f.label :comment %> <i class="far fa-comment"></i><br />
           <%= f.text_area :comment, placeholder: "今日のトレーニングはどうだった？",class: "comment-field" %>
@@ -13,6 +13,15 @@
           <%= f.label :image %> <i class="fas fa-images"></i>
           <%= f.file_field :image %>
         </div>
+        <div class="training-part-field">
+          <%= f.fields_for :training_parts do |f| %> 
+            <%= render "training_part_fields", f: f %>
+          <% end %>
+
+          <div class="links part-link">
+            <%= link_to_add_association "トレーニング部位の追加", f, :training_parts %>
+          </div>
+        </div>  
       </div>
 
       <div class="training-menu-container">

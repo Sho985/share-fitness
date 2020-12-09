@@ -1,0 +1,4 @@
+<div class="nested-fields"> 
+  <%= f.select :part,  [["胸", "胸"],["肩", "肩"], ["腕","腕"],["背中","背中"],["脚","脚"],["腹筋","腹筋"],["その他","その他"] ] , include_blank: "今日のトレーニング部位" %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+</div>
