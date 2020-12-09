@@ -36,6 +36,14 @@
         </div>
       </div>
     </div>
+    <div class="training-graph-container">
+      <div class="graph">
+        <%= pie_chart @user.training_parts.group(:part).count, donut: true,width: "23vw", height: "23vw" %>
+        <div class="graph-info">
+          <div>部位別の合計トレーニング回数:<%= @user.training_parts.count %>回</div>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="tab-wrap">
     <input id="TAB-01" type="radio" name="TAB" class="tab-switch" checked="checked" /><label class="tab-label" for="TAB-01"><%= @user.name %>の投稿</label>
