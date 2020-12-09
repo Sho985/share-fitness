@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_04_053315) do
+ActiveRecord::Schema.define(version: 2020_12_09_063833) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_12_04_053315) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.datetime "start_time"
+    t.string "training_part"
   end
 
   create_table "relationships", force: :cascade do |t|
@@ -60,6 +61,16 @@ ActiveRecord::Schema.define(version: 2020_12_04_053315) do
     t.index ["post_id"], name: "index_training_menus_on_post_id"
   end
 
+  create_table "training_parts", force: :cascade do |t|
+    t.string "part"
+    t.bigint "user_id"
+    t.bigint "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_training_parts_on_post_id"
+    t.index ["user_id"], name: "index_training_parts_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -78,4 +89,6 @@ ActiveRecord::Schema.define(version: 2020_12_04_053315) do
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "training_menus", "posts"
+  add_foreign_key "training_parts", "posts"
+  add_foreign_key "training_parts", "users"
 end

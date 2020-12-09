@@ -18,6 +18,8 @@ class PostsController < ApplicationController
     @post = Post.new
     #postに保存される際にtraining_menusも同時に保存を開始する。
     @post.training_menus.build
+    #トレーニング部位
+    @post.training_parts.build
   end
 
   def create
@@ -53,6 +55,7 @@ class PostsController < ApplicationController
 
     def post_params
       params.require(:post).permit(:comment, :image, 
+      training_parts_attributes: %i[id part user_id],
       training_menus_attributes: %i[id part event weight repetition set_count _destroy]).merge(user_id: current_user.id)
     end
 

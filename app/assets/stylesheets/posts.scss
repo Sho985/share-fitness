@@ -24,7 +24,7 @@
         font-size: 2.2vw;
       }
       
-      .comment-image-form-box{
+      .comment-image-part-form-box{
         width: 85%;
         height: auto;
         margin: 0 auto;
@@ -33,6 +33,14 @@
         .comment-field{
           width: 100%;
           height: 10vw;
+        }
+
+        .training-part-field{
+          padding-top: 1vw;
+
+          .part-link{
+            font-size: 1vw;
+          }
         }
       }
 
