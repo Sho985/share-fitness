@@ -68,7 +68,7 @@ a {
 .post-box{
   margin-top: 2%;
   width: 30%;
-  height: 25vw;
+  height: 26vw;
   border: solid 1px;  
   border-radius: 10px;
   box-shadow: 2px 2px 4px;
@@ -92,12 +92,19 @@ a {
         height: 20%;
 
         .post-user-image{
-          width: 8%;
-          height: 100%;
+          width: 4vw;
+          height: 4vw;
+          border-radius: 50%;
+          box-shadow: 1px rgba(0, 0, 0, .5);
+          object-fit: contain;
         }
 
         .post-user-name{
-          padding-left: 15px;
+          // padding-left: 1vw;
+        }
+
+        .post-datatime{
+          margin-left:auto;
         }
       }
 
