@@ -81,7 +81,7 @@
         </div>
         <div class="comment-delete-link">
           <% if comment.user_id == current_user.id %>
-          <%= link_to post_comment_path(comment.post.id,comment.id), method: :delete do %>
+          <%= link_to post_comment_path(comment.post.id,comment.id), method: :delete , data: {confirm: "本当に削除しますか？"}  do %>
             <span class="fas fa-trash-alt"></span>
           <% end %>
           <% end %>
