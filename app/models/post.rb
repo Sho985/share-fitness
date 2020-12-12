@@ -21,7 +21,7 @@ class Post < ApplicationRecord
   end
 
   #commentモデルと関連付け
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   def start_time
     self.created_at
