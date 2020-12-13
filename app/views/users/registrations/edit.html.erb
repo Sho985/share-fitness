@@ -29,7 +29,7 @@
         　</div>
 
           <div class="field">
-            <%= f.label :self_introduction %><br />
+            <%= f.label :self_introduction, class: "label" %><br />
             <%= f.text_area :self_introduction, class: "form-field" %>
       　  </div>
 
@@ -38,7 +38,7 @@
           <% end %>
 
           <div class="field">
-            <%= f.label :password %> <i>(変更したくない場合は空白にしてください)</i><br />
+            <%= f.label :password, class: "label" %> <i>(変更したくない場合は空白にしてください)</i><br />
             <%= f.password_field :password, autocomplete: "new-password", class: "form-field", placeholder: "6文字以上"  %>
           </div>
 

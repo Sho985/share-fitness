@@ -1,43 +1,7 @@
 //PC用scss
 @media screen and (min-width:769px){
-  //signupページ
-  .userform-background{
-    background-image: url(https://images.unsplash.com/photo-1560780552-ba54683cb263?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
-    width: 100%;
-    min-height: 100vh; 
-    height: auto;
 
-    .userform-box{
-      width: 40%;
-      height: auto;
-      margin: 0 auto;
-      //サインアップフォームを中央配置
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      .user-form{
-        font-size: 1.8vw;
-        line-height: 1.5;
-        margin: 0 auto;
-  
-        h2{
-          text-align: center;
-        }
-
-        .field{
-          margin:0;
-          padding-top:0;
-
-          .input-field{
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
-  //signupページ終了
-
+  //サインアップ/編集/ログインページ開始
   .user-form-background{
     background-image: url(https://images.unsplash.com/photo-1560780552-ba54683cb263?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
     width: 100%;
@@ -69,7 +33,7 @@
         padding-bottom: 2vw;
         display: flex;
         justify-content: center;
-        // align-items: center;
+        align-items: center;
         
         .user-form{
           font-size: 0.9vw;
@@ -84,14 +48,25 @@
           h2{
             text-align: center;
           }
+          
+          .field{
+            display: inline;
+          }
 
           .form-field{
+            display: inline-block;
             width: 100%;
+            margin-bottom: 0.7vw;
           }
 
           .form-button{
             width: 100%;
             margin-top: 1vw;
+            background-color:#DDFFFF;
+          }
+
+          .label{
+            margin-left: -1.2vw;
           }
         }
       }
