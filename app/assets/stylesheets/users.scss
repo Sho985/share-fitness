@@ -38,6 +38,66 @@
   }
   //signupページ終了
 
+  .user-form-background{
+    background-image: url(https://images.unsplash.com/photo-1560780552-ba54683cb263?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+
+    .user-form-container{
+      width: 70%;
+      // min-height: 100vh;
+      // margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // width: 70%;
+
+      .user-form-box{
+        width: 80%;
+        min-height: 65vh;
+        height: auto;
+        margin: 0 auto;
+        background-color: #EEEEEE;
+        box-shadow: 0 5px 15px 0 rgba(0, 0, 0, .5);
+        padding-bottom: 2vw;
+        display: flex;
+        justify-content: center;
+        // align-items: center;
+        
+        .user-form{
+          font-size: 0.9vw;
+          width: 60%;
+
+          .user-image{
+            width: 7vw;
+            height: 7vw;
+            object-fit: contain;
+          }
+
+          h2{
+            text-align: center;
+          }
+
+          .form-field{
+            width: 100%;
+          }
+
+          .form-button{
+            width: 100%;
+            margin-top: 1vw;
+          }
+        }
+      }
+    }
+  }
+
   //user-show-page開始
   .user-show-page{
     background-color: #EEEEEE;
@@ -102,6 +162,12 @@
 
             .user-name-introduction{
               display: flex;
+
+              //ユーザー編集ページへのリンクアイコン
+              .fa-cog{
+                color: #888888;
+                margin-left: 1vw;
+              }
 
               .relationship-button{
                 display: flex;
