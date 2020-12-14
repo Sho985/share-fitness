@@ -20,6 +20,8 @@ class User < ApplicationRecord
 
   has_many :training_parts, dependent: :destroy
 
+  has_many :questions
+
   #フォローしているユーザーとの関係性。
   has_many :active_relationships, class_name: "Relationship", foreign_key: :following_id
   has_many :followings, through: :active_relationships, source: :follower

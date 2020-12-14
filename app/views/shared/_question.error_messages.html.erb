@@ -1,0 +1,11 @@
+<div class="error-message">
+  <% if @question.errors.any? %>
+    <div class="alert alert-warning">
+      <ul>
+        <% @question.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>
