@@ -1,0 +1,7 @@
+<% @questions.each do |question| %>
+  <%= question.id %>
+  <%= question.title %>
+  <%= question.category %>
+  <%= question.question_content %>
+  <img src ='<%= question.question_image %>' >
+<% end %>

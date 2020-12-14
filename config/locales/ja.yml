@@ -3,6 +3,7 @@ ja:
     models:
       user: ユーザー
       post: トレーニング記録
+      question: 質問
     attributes:
       user:
         name: 名前
@@ -20,3 +21,9 @@ ja:
         weight: 重量
         repetition: 回数
         set_count: セット数
+      question:
+        title: タイトル
+        category: カテゴリー
+        question_content: 質問内容
+        question_image: 画像
+
