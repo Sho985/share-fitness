@@ -12,4 +12,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
     resource :likes, only: [:create, :destroy]
   end
+  #質問機能
+  resources :questions
+
 end
