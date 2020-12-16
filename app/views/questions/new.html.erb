@@ -4,7 +4,7 @@
       <div class="question-form">
       <%= render 'shared/question.error_messages'%>
         <h2><span class="question-top-word">質問内容</span></h2>
-        <%= form_with model: Question.new,local: true do |f| %>
+        <%= form_with model: @question,local: true do |f| %>
 
           <div class="question-field">
             <%= f.label :title %><br />
