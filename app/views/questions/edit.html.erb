@@ -1,0 +1,39 @@
+<div class="question-form-background">
+  <div class="question-form-container">
+    <div class="question-box">
+      <div class="question-form">
+      <%= render 'shared/question.error_messages'%>
+        <h2><span class="question-top-word">質問内容を編集</span></h2>
+        <%= form_with model: @question,local: true do |f| %>
+
+          <div class="question-field">
+            <%= f.label :title %><br />
+            <%= f.text_field :title,class: "question-form-field", placeholder: "40字以下,例: おすすめのプロテインを教えてください" %>
+          </div>
+
+          <div class="question-field">
+            <%= f.label :category %><br />
+            <%= f.select :category,  [["トレーニング", "トレーニング"],["ダイエット", "ダイエット"], 
+            ["バルクアップ","バルクアップ"],["食事","食事"],["栄養学","栄養学"],["サプリメント","サプリメント"],["ジム","ジム"],["睡眠","睡眠"],
+            ["ストレッチ","ストレッチ"],["その他","その他"]], 
+            {include_blank: "質問のカテゴリーを選択してください"} %>
+          </div>
+
+          <div class="question-field">
+            <%= f.label :question_content %><br />
+            <%= f.text_area :question_content,class: "question-content-form", placeholder: "1000字以下"  %>
+          </div>
+
+          <div class="question-field">
+            <%= f.label :question_image %><br />
+            <%= f.file_field :question_image %>
+          </div>
+
+          <div>
+            <%= f.submit "質問内容を更新する",class: "question-submit" %>
+          </div>
+        <% end %>
+      </div>
+    </div>  
+  </div>
+</div>
