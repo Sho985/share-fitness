@@ -1,7 +1,56 @@
-<% @questions.each do |question| %>
-  <%= question.id %>
-  <%= question.title %>
-  <%= question.category %>
-  <%= question.question_content %>
-  <img src ='<%= question.question_image %>' >
-<% end %>
+<div class="question-index-page">
+  <div class="question-search-container">
+    <div class="question-search-area">
+      <%= search_form_for @q, url: questions_path do |f| %>
+        <%= f.search_field :title_cont, 
+        placeholder: "タイトルで検索",class: "question-search" %>
+        <%= button_tag :type => "submit", :class =>"question-search-button" do %>
+          <i class="fas fa-search"></i>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="question-link">
+      <%= link_to new_question_path  do %>
+        質問する<i class="far fa-user"></i>
+      <% end %>  
+    </div>
+  </div>
+  <div class="index-all">
+    <div class="question-index-container">
+      <h2><span class="question-index-word">質問一覧</span></h2>
+      <% @questions.each do |question| %>
+        <div class="question-list-box">
+          <div class="question-list-contents">
+            <div class="question-list-user-info">
+              <img src ='<%= question.user.image %>' class="question-user-image">
+              <div class="question-list-user-name">
+              <%= link_to question.user.name, user_path(question.user) %>
+              </div>
+            </div>
+            <div class="qustion-list-category">
+              カテゴリー:<%= question.category %>
+            </div> 
+            <div class="qustion-list-title">
+              <%= question.title %>
+              <%= question.created_at.strftime('%Y/%m/%d') %>
+              <%=link_to edit_question_path(question) do %>
+                <span><i class="fas fa-edit"></i></span>
+              <% end %>
+              <%=link_to question_path(question),method: :delete , data: {confirm: "本当に削除しますか？"}  do %>
+                <span><i class="fas fa-trash-alt"></i></span>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="category-search-container">
+      <h2><span class="category-search-word">カテゴリーから探す<i class="fas fa-search-plus"></i></span></h2>
+      <div class="category-search-area">
+        <div class="category-search-box">
+          
+        </div>
+      <div>
+    </div>
+  </div>
+</div>

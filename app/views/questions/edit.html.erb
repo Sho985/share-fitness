@@ -3,7 +3,7 @@
     <div class="question-box">
       <div class="question-form">
       <%= render 'shared/question.error_messages'%>
-        <h2><span class="question-top-word">質問内容</span></h2>
+        <h2><span class="question-top-word">質問内容を編集</span></h2>
         <%= form_with model: @question,local: true do |f| %>
 
           <div class="question-field">
@@ -30,7 +30,7 @@
           </div>
 
           <div>
-            <%= f.submit "質問する",class: "question-submit" %>
+            <%= f.submit "質問内容を更新する",class: "question-submit" %>
           </div>
         <% end %>
       </div>
