@@ -18,6 +18,9 @@
   <div class="index-all">
     <div class="question-index-container">
       <h2><span class="question-index-word">質問一覧</span></h2>
+      <% if @questions.count == 0 %>
+        <h1 class="questions-no-result">該当する検索結果がありません</h1>
+      <% end %>
       <% @questions.each do |question| %>
         <div class="question-list-box">
           <div class="question-list-contents">
@@ -44,11 +47,23 @@
         </div>
       <% end %>
     </div>
-    <div class="category-search-container">
+    <div class="category-side-container">
       <h2><span class="category-search-word">カテゴリーから探す<i class="fas fa-search-plus"></i></span></h2>
       <div class="category-search-area">
         <div class="category-search-box">
-          
+          <div class="category-contents">
+            <li><%= link_to 'トレーニング',{:controller=>"questions",:action=>"index",:q=>{:category_eq=>'トレーニング'}}, method: :get %></li>
+            <li><%= link_to 'ダイエット',{:controller=>"questions",:action=>"index",:q=>{:category_eq=>'ダイエット'}}, method: :get %></li>
+            <li><%= link_to 'バルクアップ',{:controller=>"questions",:action=>"index",:q=>{:category_eq=>'バルクアップ'}}, method: :get %></li>
+            <li><%= link_to '食事',{:controller=>"questions",:action=>"index",:q=>{:category_eq=>'食事'}}, method: :get %></li>
+            <li><%= link_to '栄養学',{:controller=>"questions",:action=>"index",:q=>{:category_eq=>'栄養学'}}, method: :get %></li>
+            <li><%= link_to 'サプリメント',{:controller=>"questions",:action=>"index",:q=>{:category_eq=>'サプリメント'}}, method: :get %></li>
+            <li><%= link_to 'ジム',{:controller=>"questions",:action=>"index",:q=>{:category_eq=>'ジム'}}, method: :get %></li>
+            <li><%= link_to '睡眠',{:controller=>"questions",:action=>"index",:q=>{:category_eq=>'睡眠'}}, method: :get %></li>
+            <li><%= link_to 'ストレッチ',{:controller=>"questions",:action=>"index",:q=>{:category_eq=>'ストレッチ'}}, method: :get %></li>
+            <li><%= link_to 'その他',{:controller=>"questions",:action=>"index",:q=>{:category_eq=>'その他'}}, method: :get %></li>
+            <li><%= link_to '全ての質問', questions_path %></li>
+          </div>  
         </div>
       <div>
     </div>

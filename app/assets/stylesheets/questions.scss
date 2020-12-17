@@ -118,13 +118,9 @@
     .question-index-container{
       width: 65%;
       min-height: 100vh;
-      // background-color: white;
-      // box-shadow: 0 5px 15px 0 rgba(0, 0, 0, .5);
       height: auto;
-      // margin: 0 auto;
-      // margin-top: 2vw;
       padding-top: 1vw;
-      // display: flex;
+
 
       h2{
         text-align: center;
@@ -135,6 +131,12 @@
         .question-index-word{
           background: linear-gradient(transparent 80%, #88FFFF 80%);
         }
+      }
+
+      .questions-no-result{
+        text-align: center;
+        font-size: 2vw;
+        color: red;
       }
       
 
@@ -188,7 +190,7 @@
       }
     }
 
-    .category-search-container{
+    .category-side-container{
       // margin-top: 1vw;
       padding-top: 1.2vw;
       width: 35%;
@@ -212,8 +214,24 @@
 
       .category-search-box{
         width: 90%;
-        height: 40vh;
+        padding: 1vw;
         border: solid 1px;
+        background-color: #EEEEEE;
+
+        .category-contents{
+          display: flex;
+          flex-wrap: wrap;
+          width: 100%;
+
+          li{
+            font-size: 1vw;
+            width: 30%;
+            margin: 0 auto;
+            padding-top: 1vw;
+
+            border-bottom: solid 1px;
+          }
+        }
       }
     }
   }
