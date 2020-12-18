@@ -6,6 +6,11 @@ class QuestionsController < ApplicationController
     @questions = @q.result(distinct: true)
   end
 
+  def show
+    @question = Question.find(params[:id])
+    @questions = Question.all.order(created_at: 'DESC').limit(10)
+  end
+
   def new
     @question = Question.new
   end

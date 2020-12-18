@@ -1,0 +1,42 @@
+<div class="question-show-page">
+  <div class="question-show-container">
+    <div class="question-container">
+      <div class="question-user-info">
+        <div class="question-user-image">
+          <img src ='<%= @question.user.image %>' class="question-user-image">
+        </div>
+        <div class="question-user-name">
+          質問者:<%= link_to  @question.user.name, user_path(@question.user) %>さん
+          <div><%= @question.created_at.strftime('%Y/%m/%d') %></div>
+        </div>
+      </div>
+      <div class="question-category">
+        カテゴリー： <%= @question.category %>
+      </div>
+      <div class="question-title">
+        <%= @question.title %>
+      </div>
+      <div class="question-content">
+        <%= @question.question_content %>
+      </div>
+      <div>
+        <% if @question.question_image? %>
+          <img src ='<%= @question.question_image %>' class="question-content-image">
+        <% end %>
+      </div>
+      <div class="question-answer-container">
+      aaaaa
+      </div>
+    </div>
+    <div class="question-show-side-container">
+      <h2><span class="new-questions">新着の質問</span></h2>
+      <div class="question-side-box">
+        <% @questions.each do |question| %>
+          <div class="new-questions-link">
+            <%= link_to question.title.truncate(20), question_path(question.id)  %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

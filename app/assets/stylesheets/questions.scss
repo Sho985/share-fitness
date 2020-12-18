@@ -236,3 +236,96 @@
     }
   }
 }
+//question index　ページ終了
+
+//question showページ開始
+.question-show-page{
+  padding: 2vw 0;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(https://images.unsplash.com/photo-1560780552-ba54683cb263?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
+  height: auto;
+
+  .question-show-container{
+    display: flex;
+    width: 90%;
+    min-height: 100vh;
+    margin: 0 auto;
+    margin-top: 2vw;
+
+    .question-container{
+      width: 75%;
+      margin: 0 auto;
+      background-color: #EEEEEE;
+      border: solid 1px;
+      box-shadow: 2px 2px 3px gray;
+      padding: 1vw;
+  
+      .question-user-info{
+        display: flex;
+        align-items: center;
+        font-size: 1.1vw;
+        border-bottom: dashed 1px;
+  
+  
+        .question-user-image{
+          width: 4vw;
+          height: 4vw;
+          object-fit: contain;
+          border-radius: 50%;
+        }
+  
+        .question-user-name{
+          margin-left: 1.5vw;
+        }
+      }
+
+      .question-category{
+        color: #666666;
+        font-size: 1vw;
+        padding-top: 1vw;
+      }
+  
+      .question-title{
+        font-size: 1.5vw;
+        padding-top: 1vw;
+        padding-bottom: 1vw;
+      }
+  
+      .question-content{
+        font-size: 1.2vw;
+      }
+  
+      .question-content-image{
+        margin-top: 1vw;
+        width: 25vw;
+        height: 25vw;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .question-show-side-container{
+    width: 25%;
+    padding-left: 2vw;
+
+    h2{
+
+      .new-questions{
+        background: linear-gradient(transparent 80%, #88FFFF 80%);
+      }
+    }
+
+    .question-side-box{
+      background-color: #EEEEEE;
+      border: solid 1px;
+      box-shadow: 2px 2px 3px gray;
+
+      .new-questions-link{
+        font-size: 1vw;
+        color: #708090;
+        padding: 0.4vw ;
+      }
+    }
+  }
+}
