@@ -34,7 +34,7 @@
               カテゴリー:<%= question.category %>
             </div> 
             <div class="qustion-list-title">
-              <%= question.title %>
+              <%= link_to question.title, question_path(question.id) %>
               <%= question.created_at.strftime('%Y/%m/%d') %>
               <%=link_to edit_question_path(question) do %>
                 <span><i class="fas fa-edit"></i></span>
