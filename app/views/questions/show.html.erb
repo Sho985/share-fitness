@@ -9,6 +9,9 @@
           質問者:<%= link_to  @question.user.name, user_path(@question.user) %>さん
           <div><%= @question.created_at.strftime('%Y/%m/%d') %></div>
         </div>
+        <div class="question-answer-count">
+        <i class="far fa-comments"></i><%= @question.answers.count %>
+        </div>
       </div>
       <div class="question-category">
         カテゴリー： <%= @question.category %>
@@ -24,9 +27,40 @@
           <img src ='<%= @question.question_image %>' class="question-content-image">
         <% end %>
       </div>
-      <div class="question-answer-container">
-      aaaaa
+      <div class="question-answer-form-container">
+        <div>
+          <img src ='<%= current_user.image %>' class="answer-user-image">
+        </div>
+        <%= form_with model: [@question, @answer] do |f| %>
+          <%= f.text_area :answer_content, class: "answer-form"  %>
+          <br>
+          <%= f.submit '回答・返信する', class: "answer-submit"  %>
+        <% end %>
       </div>
+      <div class="answer-container">
+        <h2>回答一覧</h2>
+        <% @question_answer.each do |answer| %>
+          <div class="answer-box">
+            <div class="answer-user-info">
+              <img src ='<%= answer.user.image %>' class="answer-user-image">
+              <div class="answer-user-name">
+                <%=  link_to answer.user.name, user_path(answer.user.id) %>さん
+                <div><%= answer.created_at.strftime('%Y/%m/%d') %></div>
+              </div>
+            </div>
+            <div class="answer-content-box">
+              <%= answer.answer_content %>
+            </div>
+            <div class="answer-reaction-container">
+            <% if current_user == answer.user %>
+              <%= link_to question_answer_path(answer.question.id, answer.id), method: :delete , data: {confirm: "本当に削除しますか？"} do %>
+                <span><i class="fas fa-trash-alt"></i></span>
+              <% end %>  
+            <% end %>  
+            </div>
+          </div>
+        <% end %>
+      </div> 
     </div>
     <div class="question-show-side-container">
       <h2><span class="new-questions">新着の質問</span></h2>

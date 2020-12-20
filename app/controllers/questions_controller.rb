@@ -9,6 +9,8 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @questions = Question.all.order(created_at: 'DESC').limit(10)
+    @answer = Answer.new
+    @question_answer = @question.answers.order(created_at: 'DESC')
   end
 
   def new

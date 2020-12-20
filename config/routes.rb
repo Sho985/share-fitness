@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     resource :likes, only: [:create, :destroy]
   end
   #質問機能
-  resources :questions
+  resources :questions do
+    resources :answers, only: [:create, :destroy]
+  end
 
 end

@@ -278,6 +278,11 @@
         .question-user-name{
           margin-left: 1.5vw;
         }
+
+        .question-answer-count{
+          font-size: 1.4vw;
+          margin-left: auto;
+        }
       }
 
       .question-category{
@@ -301,6 +306,78 @@
         width: 25vw;
         height: 25vw;
         object-fit: contain;
+      }
+    }
+
+    .question-answer-form-container{
+      display: flex;
+      padding-top: 2vw;
+
+      .answer-user-image{
+        width: 3vw;
+        height: 3vw;
+        object-fit: contain;
+        border-radius: 50%;
+      }
+      
+
+      .answer-form{
+        width: 54.7vw;
+        min-height: 3vw;
+        height: auto;
+      }
+
+      .answer-submit{
+        // margin: 0 auto;
+        background-color: #DDFFFF;
+        width: 55vw;
+      }
+    }
+
+    .answer-container{
+      padding: 1vw 0;
+      // display: flex;
+
+      h2{
+        text-align: center;
+        border-bottom: dotted 1px;
+      }
+
+      .answer-box{
+        background-color: white;
+        border: solid 1px;
+        margin-bottom: 1vw;
+        // display: flex;
+
+        .answer-user-info{
+          display: flex;
+          align-items: center;
+
+          .answer-user-image{
+            width: 3vw;
+            height: 3vw;
+            object-fit: contain;
+            border-radius: 50%;
+          }
+
+          .answer-user-name{
+            margin-left: 1vw;
+            font-size: 0.8vw;
+          }
+        }
+
+        .answer-content-box{
+          font-size: 1vw;
+          padding: 0.5vw;
+          // margin-bottom: 1vw;
+        }
+
+        .answer-reaction-container{
+          font-size: 0.8vw;
+          margin: 0 0.5vw;
+          display: flex; 
+          border-top: dotted 1px;
+        }
       }
     }
   }
