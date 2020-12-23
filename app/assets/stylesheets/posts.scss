@@ -1,5 +1,5 @@
 //PC用scss
-@media screen and (min-width:769px){
+// @media screen and (min-width:769px){
   //投稿ページと投稿編集ページ用のscss
   .post-form-background{
     background-image: url(https://cdn.pixabay.com/photo/2015/11/13/03/26/dirty-1041382_1280.jpg);
@@ -100,21 +100,28 @@
 
 
   .post-index-page{
-    background-image: url(https://images.unsplash.com/photo-1550895030-823330fc2551?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80);
+    background-image: url(https://images.unsplash.com/photo-1560780552-ba54683cb263?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
+    background-position: center;
   }
 
   .search-container{
     display: flex;
-    justify-content: space-around;
-    padding-top: 1vw;
-    height: 3.5vw;
+    justify-content: center;
+    align-items: center;
+    height: 8vw;
 
-    .search-form{
-      font-size: 1.1vw;
-      margin: 0 auto;
-      
-      .input-search{
-        width: 30vw;
+    .search-area{
+      padding: 1vw;
+      background-color: #EEEEEE;
+      box-shadow: 2px 2px 3px gray;
+
+      .search-form{
+        font-size: 1.1vw;
+        margin: 0 auto;
+        
+        .input-search{
+          width: 60vw;
+        }
       }
     }
   }
@@ -217,5 +224,5 @@
     }
   }
   //投稿詳細（投稿に対してコメントできるページ）終了
-}
+// }
 //PC用scss 終了
