@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   #ユーザーマイページ用のルーティング
   resources :users, only: [:show] do
     get :calendar, on: :member 
+    get :graph, on: :member 
     resource :relationships, only: [:create, :destroy]
   end
 
@@ -12,6 +13,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
     resource :likes, only: [:create, :destroy]
   end
+
   #質問機能
   resources :questions do
     resources :answers, only: [:create, :destroy]
