@@ -145,6 +145,16 @@
                 margin-left: 1vw;
               }
 
+              .fa-chart-line{
+                color: #888888;
+                margin-left: 0.5vw;
+              }
+
+              .fa-weight{
+                color: #888888;
+                margin-left: 0.5vw;
+              }
+
               .relationship-button{
                 display: flex;
                 align-items: center;
@@ -249,6 +259,28 @@
     width: 95%;
     margin: 0 auto;
     padding-top: 1vw;
+  }
+
+  //グラフページ
+  .graph-page{
+    background-color: #EEEEEE;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+
+
+    .graph-container{
+
+      .graph-search-area{
+        display: flex;
+        justify-content: center;
+
+        .graph-search{
+          width: 55vw;
+          margin: 2vw 0;
+        }
+      }
+    }
   }
 
 }

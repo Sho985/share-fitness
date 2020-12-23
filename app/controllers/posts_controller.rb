@@ -50,13 +50,13 @@ class PostsController < ApplicationController
     post.destroy
     redirect_to posts_path, notice: '削除が完了しました！'
   end
-
+    
     private
 
     def post_params
       params.require(:post).permit(:comment, :image, 
       training_parts_attributes: %i[id part user_id],
-      training_menus_attributes: %i[id part event weight repetition set_count _destroy]).merge(user_id: current_user.id)
+      training_menus_attributes: %i[id part user_id event weight repetition set_count _destroy]).merge(user_id: current_user.id)
     end
 
     #投稿ユーザーとログインユーザーが正しくないとアクセスできない

@@ -12,4 +12,9 @@ class UsersController < ApplicationController
     @user =User.find(params[:id])
     @posts =@user.posts
   end
+
+  def graph  
+    @q =  TrainingMenu.where(user_id: current_user.id).limit(15).ransack(params[:q])
+    @training_event = @q.result(distinct: true)
+  end
 end

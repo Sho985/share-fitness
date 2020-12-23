@@ -17,6 +17,12 @@
               <%= link_to edit_user_registration_path(@user) do %>
                 <span class="fas fa-cog"></span>
               <% end %>
+              <%= link_to graph_user_path do %>
+                <span class="fas fa-chart-line"></span>
+              <% end %>
+              <div>
+                <i class="fas fa-weight"></i>
+              </div>
             <% end %>  
             <div class="relationship-button">
               <% if @user.id != current_user.id %>
