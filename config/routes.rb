@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   root 'static_pages#home'
   
-  #ユーザーマイページ用のルーティング
   resources :users, only: [:show] do
     get :calendar, on: :member 
-    get :graph, on: :member 
+    get :graph, on: :member  
     resource :relationships, only: [:create, :destroy]
+    resources :bodyweights, only: [:index, :create ,:destroy]
   end
 
   resources :posts do
