@@ -45,7 +45,7 @@
               <img src ='<%= answer.user.image %>' class="answer-user-image">
               <div class="answer-user-name">
                 <%=  link_to answer.user.name, user_path(answer.user.id) %>さん
-                <div><%= answer.created_at.strftime('%Y/%m/%d') %></div>
+                <div><%= answer.created_at.strftime('%Y/%m/%d/%H:%M') %></div>
               </div>
             </div>
             <div class="answer-content-box">
@@ -70,6 +70,20 @@
             <%= link_to question.title.truncate(20), question_path(question.id)  %>
           </div>
         <% end %>
+      </div>
+      <h2><span class="question-category-title">カテゴリー</span></h2>
+      <div class="question-side-category-box">
+        <li><%= link_to 'トレーニング',{:controller=>"questions",:action=>"index",:q=>{:category_eq=>'トレーニング'}}, method: :get %></li>
+        <li><%= link_to 'ダイエット',{:controller=>"questions",:action=>"index",:q=>{:category_eq=>'ダイエット'}}, method: :get %></li>
+        <li><%= link_to 'バルクアップ',{:controller=>"questions",:action=>"index",:q=>{:category_eq=>'バルクアップ'}}, method: :get %></li>
+        <li><%= link_to '食事',{:controller=>"questions",:action=>"index",:q=>{:category_eq=>'食事'}}, method: :get %></li>
+        <li><%= link_to '栄養学',{:controller=>"questions",:action=>"index",:q=>{:category_eq=>'栄養学'}}, method: :get %></li>
+        <li><%= link_to 'サプリメント',{:controller=>"questions",:action=>"index",:q=>{:category_eq=>'サプリメント'}}, method: :get %></li>
+        <li><%= link_to 'ジム',{:controller=>"questions",:action=>"index",:q=>{:category_eq=>'ジム'}}, method: :get %></li>
+        <li><%= link_to '睡眠',{:controller=>"questions",:action=>"index",:q=>{:category_eq=>'睡眠'}}, method: :get %></li>
+        <li><%= link_to 'ストレッチ',{:controller=>"questions",:action=>"index",:q=>{:category_eq=>'ストレッチ'}}, method: :get %></li>
+        <li><%= link_to 'その他',{:controller=>"questions",:action=>"index",:q=>{:category_eq=>'その他'}}, method: :get %></li>
+        <li><%= link_to '全ての質問', questions_path %></li>
       </div>
     </div>
   </div>
