@@ -173,6 +173,10 @@
             .question-list-user-name{
               margin-left: 1vw;
             }
+
+            .qustion-created-data{
+              margin-left: auto;
+            }
           }
 
           .qustion-list-category{
@@ -181,10 +185,6 @@
     
           .question-list-title{
             display: flex;
-
-            .question-data{
-              // margin-left: auto;
-            }
           }
         }
       }
