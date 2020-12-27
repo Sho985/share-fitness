@@ -18,4 +18,15 @@ class UsersController < ApplicationController
     @q =  TrainingMenu.where(user_id: current_user.id).limit(15).ransack(params[:q])
     @training_event = @q.result(distinct: true)
   end
+
+  def following
+    @user =User.find(params[:id])
+    @following_users = @user.followings
+  end
+
+  def followers
+    @user =User.find(params[:id])
+    @followers = @user.followers
+  end
+
 end

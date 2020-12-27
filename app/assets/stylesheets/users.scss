@@ -1,5 +1,5 @@
+
 //PC用scss
-// @media screen and (min-width:769px){
 
 //サインアップ/編集/ログインページ開始
 .user-form-background{
@@ -123,10 +123,16 @@
           }
 
           .user-relationship-count{
-            display: flex;
-            justify-content: center;
+            // display: flex;
+            // justify-content: center;
             font-size: 1vw;
-            padding: 1vw;
+            padding-top: 1vw;
+
+            .relationship{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
           }
         }
       }
@@ -169,18 +175,6 @@
               margin-left: 1vw;
               padding: 0;
               // background-color: #BBFFFF;
-
-              .follow-button{
-                background-color:#CCCCCC;
-                margin: 0 auto;
-                box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .5);
-              }
-
-              .unfollow-button{
-                background-color: #BBFFFF;
-                margin: 0 auto;
-                box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .5);
-              }
             }
           }
 
@@ -405,7 +399,82 @@
 }
 //体重記録ページ終了
 
-// }
+//フォロー・フォロワーページ
+.user-relationship-page{
+  background-image: url(https://images.unsplash.com/photo-1560780552-ba54683cb263?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  padding-top: 1vw;
+
+  .following-follower-link{
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+
+    .following-page-link{
+      width: 50%;
+
+      h1{
+        text-align: center;
+
+        .following{
+          background: linear-gradient(transparent 80%, #BBFFFF 80%);
+        }
+      }
+    }
+
+    .follower-page-link{
+      width: 50%;
+
+      h1{
+        text-align: center;
+
+        .follower{
+          background: linear-gradient(transparent 80%, #BBFFFF 80%);
+        }
+      }
+    }
+  }
+
+  .user-list-box{
+    width: 70%;
+    margin: 0 auto;
+    background-color: #EEEEEE;
+    box-shadow: 2px 2px 3px gray;
+    padding: 1vw;
+    font-size: 1vw;
+    border-bottom: solid 1px;
+    // outline: 1px solid;
+
+    .user-list-info{
+      display: flex;
+      align-items: center;
+
+      .user-image{
+        width: 3.5vw;
+        height: 3.5vw;
+        border-radius: 50%;
+        object-fit: contain;
+        box-shadow: 2px 2px 3px gray;
+        margin-right: 1.5vw;
+      }
+    }
+
+    .user-self-introduction{
+      margin-top: 1vw;
+    }
+
+    .f-button{
+      margin-left: auto;
+      margin-right: 2vw;
+    }
+  }
+}
+
+//フォロー・フォロワーページ終了
+
+
 //PC用scss終了
 
 //スマホ・タブレット用

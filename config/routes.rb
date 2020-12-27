@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     get :calendar, on: :member 
     get :graph, on: :member  
+    get :following, on: :member 
+    get :followers, on: :member 
     resource :relationships, only: [:create, :destroy]
     resources :bodyweights, only: [:index, :create ,:destroy]
   end
