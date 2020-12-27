@@ -387,7 +387,6 @@
     padding-left: 2vw;
 
     h2{
-
       .new-questions{
         background: linear-gradient(transparent 80%, #88FFFF 80%);
       }
@@ -403,6 +402,19 @@
         color: #708090;
         padding: 0.4vw ;
       }
+    }
+
+    .question-category-title{
+      background: linear-gradient(transparent 80%, #88FFFF 80%);  
+    }
+
+    .question-side-category-box{
+      background-color: #EEEEEE;
+      border: solid 1px;
+      box-shadow: 2px 2px 3px gray;
+      // list-style: none;
+      padding: 1vw;
+      font-size: 1.2vw;
     }
   }
 }
