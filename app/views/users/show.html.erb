@@ -5,7 +5,12 @@
         <div class="user-image">
           <img src ='<%= @user.image %>' width="100%" height="100%" class="info-image">
           <div class="user-relationship-count">
-            フォロー中:<%= @user.followings.count %><br>フォロワー:<%= @user.followers.count %>
+            <div class="relationship">
+              <%= link_to "フォロー中:#{@user.followings.count}", following_user_path(@user.id) %>
+            </div>
+            <div class="relationship">
+              <%= link_to "フォロワー:#{@user.followers.count}",  followers_user_path(@user.id) %>
+            </div>
           </div>
         </div>
       </div>
