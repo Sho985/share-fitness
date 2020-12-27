@@ -227,7 +227,7 @@
     .tab-label {
         display: flex;
         justify-content: center;
-        width: 18%;
+        width: 25%;
         color: #333333;
         background: #EEEEEE;
         font-size: 1.2vw;
@@ -257,6 +257,55 @@
 
     .tab-switch {
         display: none;
+    }
+
+    .question-list-box{
+      border: solid 1px;
+      width: 80%;
+      // min-height: 7vw;
+      font-size: 1.2vw;
+      padding: 1vw;
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+      margin-top: 2vw;
+      background-color: #EEEEEE;
+      box-shadow: 2px 2px 3px gray;
+  
+
+      .question-list-contents{
+        width: 100%;
+
+        .question-list-user-info{
+          display: flex;
+          align-items: center;
+          margin-bottom: 1vw;
+          border-bottom: solid 1px;
+          width: 100%;
+
+          .question-user-image{
+            width: 2.7vw;
+            height: 2.7vw;
+            object-fit: contain;
+          }
+
+          .question-list-user-name{
+            margin-left: 1vw;
+          }
+
+          .qustion-created-data{
+            margin-left: auto;
+          }
+        }
+
+        .qustion-list-category{
+          color: #666666;
+        }
+  
+        .question-list-title{
+          display: flex;
+        }
+      }
     }
   }
   //tab 終了

@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     @user =User.find(params[:id])
     @posts =@user.posts.order(created_at: 'DESC')
     @like_posts = @user.like_posts
+    @user_questions = @user.questions.order(created_at: 'DESC')
   end
 
   def calendar
