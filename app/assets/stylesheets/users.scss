@@ -472,8 +472,33 @@
     }
   }
 }
-
 //フォロー・フォロワーページ終了
+
+//タイムライン
+.timeline-background{
+  background-image: url(https://images.unsplash.com/photo-1560780552-ba54683cb263?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  padding-top: 1vw;
+  padding-bottom: 2vw;
+
+  h1{
+    text-align: center;
+
+    .timeline-title{
+      background: linear-gradient(transparent 80%, #BBFFFF 80%);
+    }
+  }
+
+  .timeline-container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+
+//タイムライン終了
 
 
 //PC用scss終了

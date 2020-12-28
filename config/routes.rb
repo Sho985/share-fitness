@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     get :graph, on: :member  
     get :following, on: :member 
     get :followers, on: :member 
+    get :timeline, on: :member 
     resource :relationships, only: [:create, :destroy]
     resources :bodyweights, only: [:index, :create ,:destroy]
   end

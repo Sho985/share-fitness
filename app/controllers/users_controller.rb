@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
-  before_action :authenticate_user!, only: [:calendar]
+  before_action :authenticate_user!
+  before_action :not_authorized_user, only: [:calendar, :graph, :timeline]
   
   def show
     @user =User.find(params[:id])
@@ -28,5 +29,20 @@ class UsersController < ApplicationController
     @user =User.find(params[:id])
     @followers = @user.followers
   end
+
+  def timeline
+    @user =User.find(params[:id])
+    @following_users = @user.followings
+    @posts = Post.all.includes(:training_menus).where(user_id: @following_users).order(created_at: 'DESC')
+  end
+
+    private
+
+    def not_authorized_user
+      user = User.find(params[:id])
+      if user.id != current_user.id
+        redirect_to user_path(current_user), alert: "アクセス権限がありません"
+      end
+    end
 
 end
