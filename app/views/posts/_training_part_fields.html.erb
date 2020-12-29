@@ -1,4 +1,8 @@
-<div class="nested-fields"> 
+<div class="nested-fields trainning-part-form""> 
   <%= f.select :part,  [["胸", "胸"],["肩", "肩"], ["腕","腕"],["背中","背中"],["脚","脚"],["腹筋","腹筋"],["その他","その他"] ] , include_blank: "今日のトレーニング部位" %>
   <%= f.hidden_field :user_id, value: current_user.id %>
+
+  <div class="nest-button-link trainning-part-form-delete">
+    <%= link_to_remove_association 'ー', f %>
+  </div>
 </div>

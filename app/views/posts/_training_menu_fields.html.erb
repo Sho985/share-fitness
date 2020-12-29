@@ -1,8 +1,5 @@
 <div class="nested-fields trainning-menu-form"> 
   <h3>-Record-</h3>
-    <div class="trainning-menu-form">
-      <%= f.select :part,  [["胸", "胸"],["肩", "肩"], ["腕","腕"],["背中","背中"],["脚","脚"],["腹筋","腹筋"],["その他","その他"] ] , include_blank: "種目のトレーニング部位"%>
-    </div>
 
 
   <div class="event-form">
@@ -23,7 +20,7 @@
     </div>  
 
     <div class="nest-delete-link nest-button-link">
-      <%= link_to_remove_association '削除', f %>
+      <%= link_to_remove_association 'ー', f %>
     </div>
   </div>
 

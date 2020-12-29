@@ -22,6 +22,7 @@
       h2{
         text-align: center;
         font-size: 2.2vw;
+        margin-bottom: 0;
       }
       
       .comment-image-part-form-box{
@@ -53,7 +54,19 @@
         }
       }
 
-      //ネストフォーム
+      //トレーニング部位のネストフォーム
+      .trainning-part-form{
+        display: flex;
+        font-size: 1vw;
+        margin-top: 0.5vw;
+        
+        .trainning-part-form-delete{
+          font-size: 1.2vw;
+          margin-left: 1vw;
+        }
+      }
+
+      //トレーニングメニューネストフォーム
       .training-menu-container{
         width: 85%;
         margin: 0 auto;
@@ -65,21 +78,24 @@
 
         .event-form{
           display: flex;
-
           width: 100%;
 
           .nest-field{
-            width: 100%;
+            font-size: 1.2vw;
+            width: 15vw;
           }
 
           .nest-delete-link{
             margin-left: 1vw;
+            // background-color: #EEEEEE;
           }
         }
-        
-        .nest-button-link{
-          font-size: 1vw;
-        }
+      }
+      //トレーニングメニューネストフォーム
+
+      .nest-button-link{
+        font-size: 1.3vw;
+        font-weight: bold;
       }
 
       .submit-button{
