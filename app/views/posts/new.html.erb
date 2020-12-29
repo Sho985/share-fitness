@@ -1,6 +1,6 @@
 <div class="post-form-background">
   <div class="post-form-container">
-    <h2>---Record---</h2>
+    <h2>Record</h2>
     <%= render 'shared/error_messages'%>
       <%= form_with model: @post ,local: true do |f| %>
 
@@ -18,8 +18,8 @@
             <%= render "training_part_fields", f: f %>
           <% end %>
 
-          <div class="links part-link">
-            <%= link_to_add_association "トレーニング部位の追加", f, :training_parts %>
+          <div class="links nest-button-link">
+            <%= link_to_add_association "＋", f, :training_parts %>
           </div>
         </div>  
       </div>
@@ -37,11 +37,11 @@
           <%= render "training_menu_fields", f: f %>
         <% end %>
 
-        <div class="links">
+    
           <div class="nest-button-link">
-            <%= link_to_add_association "フォームの追加", f, :training_menus %>
+            <%= link_to_add_association "＋", f, :training_menus %>
           </div>
-        </div>
+    
       </div>
 
       
