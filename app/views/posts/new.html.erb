@@ -25,22 +25,14 @@
       </div>
 
       <div class="training-menu-container">
-        <%= f.fields_for :training_menus do |f| %>
-          <%= render "training_menu_fields", f: f %>
+        <%= f.fields_for :training_events do |f| %>
+          <%= render "training_event_fields", f: f %>
         <% end %>
 
-        <%= f.fields_for :training_menus do |f| %>
-          <%= render "training_menu_fields", f: f %>
-        <% end %>
-
-        <%= f.fields_for :training_menus do |f| %>
-          <%= render "training_menu_fields", f: f %>
-        <% end %>
-
-    
-          <div class="nest-button-link">
-            <%= link_to_add_association "＋", f, :training_menus %>
-          </div>
+  
+        <div class="nest-button-link">
+          <%= link_to_add_association "種目の追加", f, :training_events %>
+        </div>
     
       </div>
 

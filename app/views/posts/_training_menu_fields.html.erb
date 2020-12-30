@@ -1,29 +1,15 @@
-<div class="nested-fields trainning-menu-form"> 
-  <h3>-Record-</h3>
+<div class="nested-fields training_menu_fields training-menu-set-form">
+  
+    <%= f.number_field :weight, placeholder: "重さ・kg, 例:100",class: "nest-field"  %>
+ 
+
+    <%= f.number_field :repetition,placeholder: "回数, 例:5",class: "nest-field"  %>
 
 
-  <div class="event-form">
-    <div class="nest-form">
-      <%= f.text_field :event, placeholder: "種目名 例:ベンチプレス",class: "nest-field" %>
-    </div>
-
-    <div class="nest-form">
-      <%= f.number_field :weight, placeholder: "重さ・kg, 例:100",class: "nest-field"  %>
-    </div>
-
-    <div class="nest-form">
-      <%= f.number_field :repetition,placeholder: "回数, 例:5",class: "nest-field"  %>
-    </div>
-
-    <div class="nest-form">
-      <%= f.number_field :set_count,placeholder: "セット数, 例:3",class: "nest-field"  %>
-    </div>  
-
-    <div class="nest-delete-link nest-button-link">
-      <%= link_to_remove_association 'ー', f %>
-    </div>
+    <%= f.number_field :set_count,placeholder: "セット数, 例:3",class: "nest-field"  %>
+ 
+  
+  <div class="nest-delete-link nest-button-link">
+    <%= link_to_remove_association 'ー', f %>
   </div>
-
-  <%= f.hidden_field :user_id, value: current_user.id %>
-
 </div>
