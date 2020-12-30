@@ -10,13 +10,17 @@
         <div class="post-user-comment">
           <%= post.comment %>
         </div>
-        <% post.training_menus.each do |training_menu| %>
-        <div class="post-training-menu">
-          部位:<%= training_menu.part %>/種目:<%= training_menu.event %><br>
-          <%= training_menu.weight %>kg
-          <%= training_menu.repetition %>rep
-          <%= training_menu.set_count %>set
-        </div>
+        <% post.training_events.each.with_index(1) do |training, i| %>
+          <div class="post-training-info">
+            <div class="training-event-name"><%= i %>.<%= training.event %></div>
+            <% training.training_menus.each do |menu|%>
+              <div class="set-menu-container">
+                <div class="set-menu-content"><%= menu.weight %>kg</div>
+                <div class="set-menu-content rep"><%= menu.repetition %>rep</div>
+                <div class="set-menu-content"><%= menu.set_count %>set</div>
+              </div>   
+            <% end %>  
+          </div>
         <% end %>
         <div>
           <img src ='<%= post.image %>' class="post-user-image">

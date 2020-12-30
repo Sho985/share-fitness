@@ -4,9 +4,8 @@ class PostsController < ApplicationController
   before_action :correct_user, only: [:destroy]
 
   def index
-    @posts = Post.all.includes(:training_events).order(created_at: 'DESC')
-    # .ransack(params[:q])
-    # @posts = @q.result(distinct: true)
+    @q = Post.all.includes(:training_events).order(created_at: 'DESC').ransack(params[:q])
+    @posts = @q.result(distinct: true)
   end
 
   def show
@@ -25,7 +24,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to root_path, notice: 'トレーニング内容を記録しました!'
+      redirect_to posts_path, notice: 'トレーニング内容を記録しました!'
     else
       render 'new'
     end
@@ -56,9 +55,9 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(
       :comment, :image, 
-      training_parts_attributes: [:part, :user_id],
-      training_events_attributes: [:event, :_destroy,  
-      training_menus_attributes: %i[weight repetition set_count _destroy]
+      training_parts_attributes: [:id, :part, :user_id],
+      training_events_attributes: [:id, :event, :_destroy,  
+      training_menus_attributes: %i[id weight repetition set_count _destroy]
       ]
       ).merge(user_id: current_user.id)
     end
