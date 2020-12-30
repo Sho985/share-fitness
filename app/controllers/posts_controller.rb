@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.includes(:training_menus).find(params[:id])
+    @post = Post.includes(:training_events).find(params[:id])
     @comment = Comment.new
     @comments = @post.comments
   end
