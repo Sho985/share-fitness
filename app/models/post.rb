@@ -1,6 +1,8 @@
 class Post < ApplicationRecord
   validates :comment, presence: true, length:{maximum: 100}
   validates :training_events, presence: true
+  validates :training_parts, presence: true
+
   belongs_to :user
 
   has_many :training_events, dependent: :destroy
