@@ -101,10 +101,6 @@ a:hover{
           object-fit: contain;
         }
 
-        .post-user-name{
-          // padding-left: 1vw;
-        }
-
         .post-datatime{
           margin-left:auto;
         }
@@ -114,8 +110,22 @@ a:hover{
         border-bottom: solid 1px;
       }
 
-      .post-training-menu{
+      .post-training-info{
         border-bottom: solid 1px;
+        font-size: 1.3vw;
+        margin-bottom: 1vw;
+
+        .training-event-name{
+          font-size: 1.4vw;
+        }
+
+        .set-menu-container{
+          display: flex;
+
+          .set-menu-content{
+            width: 6vw;
+          }
+        }
       }
     }
   }
