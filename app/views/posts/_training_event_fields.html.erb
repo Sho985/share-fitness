@@ -1,0 +1,24 @@
+<div class="nested-fields"> 
+  <h3>-Record-</h3>
+
+  <div class="training-record-form">
+    <div class="training-event-form-container">
+      <%= f.text_field :event, placeholder: "種目名: 例:ベンチプレス",class: "event-field"  %>
+    </div>
+
+    <div class="nest-delete-link nest-button-link">
+      <%= link_to_remove_association 'ー', f %>
+    </div>
+  </div>
+
+  <%= f.fields_for :training_menus do |f| %>
+    <%= render 'training_menu_fields', f: f %>
+  <% end %>
+
+ 
+
+  <div class="links nest-button-link">
+    <%= link_to_add_association "＋", f, :training_menus %>
+  </div>
+
+</div>

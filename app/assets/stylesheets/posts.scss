@@ -76,13 +76,27 @@
           font-size: 1vw;
         }
 
-        .event-form{
+        .training-record-form{
           display: flex;
           width: 100%;
 
+          .training-event-form-container{
+            margin-bottom: 0.3vw;
+
+            .event-field{
+              width: 30vw;
+              font-size: 1.2vw;
+              margin-right: 1vw;
+            }
+          }
+        }
+
+        .training-menu-set-form{
+          display: flex;
+
           .nest-field{
             font-size: 1.2vw;
-            width: 15vw;
+            width: 20vw;
           }
 
           .nest-delete-link{
@@ -94,6 +108,7 @@
       //トレーニングメニューネストフォーム
 
       .nest-button-link{
+        // 種目を増やすボタン
         font-size: 1.3vw;
         font-weight: bold;
       }

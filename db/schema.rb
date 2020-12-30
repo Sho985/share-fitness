@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_25_044203) do
+ActiveRecord::Schema.define(version: 2020_12_29_131746) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,6 +79,14 @@ ActiveRecord::Schema.define(version: 2020_12_25_044203) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "training_events", force: :cascade do |t|
+    t.string "event"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "post_id"
+    t.index ["post_id"], name: "index_training_events_on_post_id"
+  end
+
   create_table "training_menus", force: :cascade do |t|
     t.string "part"
     t.string "event"
@@ -87,9 +95,11 @@ ActiveRecord::Schema.define(version: 2020_12_25_044203) do
     t.integer "set_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "post_id", null: false
+    t.bigint "post_id"
     t.integer "user_id"
+    t.bigint "training_event_id"
     t.index ["post_id"], name: "index_training_menus_on_post_id"
+    t.index ["training_event_id"], name: "index_training_menus_on_training_event_id"
   end
 
   create_table "training_parts", force: :cascade do |t|
@@ -123,7 +133,9 @@ ActiveRecord::Schema.define(version: 2020_12_25_044203) do
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "questions", "users"
+  add_foreign_key "training_events", "posts"
   add_foreign_key "training_menus", "posts"
+  add_foreign_key "training_menus", "training_events"
   add_foreign_key "training_parts", "posts"
   add_foreign_key "training_parts", "users"
 end

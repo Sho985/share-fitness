@@ -4,8 +4,9 @@ class PostsController < ApplicationController
   before_action :correct_user, only: [:destroy]
 
   def index
-    @q = Post.all.includes(:training_menus).order(created_at: 'DESC').ransack(params[:q])
-    @posts = @q.result(distinct: true)
+    @posts = Post.all.includes(:training_events).order(created_at: 'DESC')
+    # .ransack(params[:q])
+    # @posts = @q.result(distinct: true)
   end
 
   def show
@@ -16,16 +17,15 @@ class PostsController < ApplicationController
 
   def new 
     @post = Post.new
-    #postに保存される際にtraining_menusも同時に保存を開始する。
-    @post.training_menus.build
-    #トレーニング部位
     @post.training_parts.build
+    @training_event = @post.training_events.build
+    @training_event.training_menus.build 
   end
 
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to posts_path, notice: 'トレーニング内容を記録しました!'
+      redirect_to root_path, notice: 'トレーニング内容を記録しました!'
     else
       render 'new'
     end
@@ -54,9 +54,13 @@ class PostsController < ApplicationController
     private
 
     def post_params
-      params.require(:post).permit(:comment, :image, 
-      training_parts_attributes: %i[id part user_id],
-      training_menus_attributes: %i[id part user_id event weight repetition set_count _destroy]).merge(user_id: current_user.id)
+      params.require(:post).permit(
+      :comment, :image, 
+      training_parts_attributes: [:part, :user_id],
+      training_events_attributes: [:event, :_destroy,  
+      training_menus_attributes: %i[weight repetition set_count _destroy]
+      ]
+      ).merge(user_id: current_user.id)
     end
 
     #投稿ユーザーとログインユーザーが正しくないとアクセスできない
