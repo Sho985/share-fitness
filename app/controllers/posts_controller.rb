@@ -55,7 +55,7 @@ class PostsController < ApplicationController
       params.require(:post).permit(
       :comment, :image, 
       training_parts_attributes: [:id, :part, :user_id],
-      training_events_attributes: [:id, :event, :_destroy,  
+      training_events_attributes: [:id, :event, :user_id, :_destroy,  
       training_menus_attributes: %i[id weight repetition set_count _destroy]
       ]
       ).merge(user_id: current_user.id)

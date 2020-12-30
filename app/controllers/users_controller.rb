@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def graph  
-    @q =  TrainingMenu.where(user_id: current_user.id).limit(15).ransack(params[:q])
+    @q =  TrainingEvent.includes(:training_menus).where(user_id: current_user.id).limit(15).order(created_at: 'ASC').ransack(params[:q])
     @training_event = @q.result(distinct: true)
   end
 
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   def timeline
     @user =User.find(params[:id])
     @following_users = @user.followings
-    @posts = Post.all.includes(:training_menus).where(user_id: @following_users).order(created_at: 'DESC')
+    @posts = Post.all.includes(:training_events).where(user_id: @following_users).order(created_at: 'DESC')
   end
 
     private
