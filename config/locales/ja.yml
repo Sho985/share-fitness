@@ -3,6 +3,8 @@ ja:
     models:
       user: ユーザー
       post: トレーニング記録
+      post/training_parts: トレーニング部位
+      post/training_events: トレーニング種目
       question: 質問
     attributes:
       user:
@@ -14,10 +16,13 @@ ja:
       post:
         image: 画像
         comment: コメント
-        training_menus: トレーニングメニュー
-      post/training_menus:
+        training_events: トレーニング種目
+      post/training_parts:
         part: トレーニング部位
+      post/training_events:
         event: 種目
+        training_menus: 重量・回数・セット数
+      post/training_events/training_menus: 
         weight: 重量
         repetition: 回数
         set_count: セット数
