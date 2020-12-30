@@ -4,6 +4,7 @@
   <div class="training-record-form">
     <div class="training-event-form-container">
       <%= f.text_field :event, placeholder: "種目名: 例:ベンチプレス",class: "event-field"  %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
     </div>
 
     <div class="nest-delete-link nest-button-link">

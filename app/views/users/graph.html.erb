@@ -4,7 +4,7 @@
       <%= search_form_for @q, url: graph_user_path do |f| %>
                 
         <%= f.search_field :event_eq, 
-        placeholder: "トレーニング種目を入力するとグラフが生成されます 例:ベンチプレス,",class: "graph-search" %>
+        placeholder: "トレーニング種目を入力すると重量の遷移グラフが生成されます<最大15件>/例:ベンチプレス,",class: "graph-search" %>
       
         <%= button_tag :type => "submit", :class =>"btn btn-default btn-s-md" do %>
           <i class="fas fa-search"></i>
@@ -12,7 +12,7 @@
       
       <% end %>
     </div>
-    <%= column_chart @training_event.pluck(:created_at,:weight), xtitle: "トレーニング重量の遷移(最新#{@training_event.count}件)", defer: true,
+    <%= column_chart @training_event.pluck(:created_at,:weight), xtitle: "トレーニングごとの最大重量(Kg)/<最新#{@training_event.count}件>", defer: true,
     colors: ['#0000FF'] ,width: "95vw", height: "35vw", messages: {empty: "該当する種目データがありません。"} %>
   </div>
 </div>
