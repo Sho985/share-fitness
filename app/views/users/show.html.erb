@@ -94,7 +94,7 @@
             <div class="qustion-list-title">
               <%= link_to question.title, question_path(question.id) %>
             </div>
-            <div>
+            <div class="question-edit-delete-link">
               <% if current_user.id == question.user.id %>
                 <%=link_to edit_question_path(question) do %>
                   <span><i class="fas fa-edit"></i></span>
