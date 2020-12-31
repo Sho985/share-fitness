@@ -5,7 +5,10 @@ class BodyweightsController < ApplicationController
   def index
     @bodyweight = Bodyweight.new
     @user = User.find(params[:user_id])
-    @bodyweights = @user.bodyweights.order(day: :asc).last(7)
+    #現在の日にちの取得.
+    search_date = Date.today
+    @user_bodyweights = @user.bodyweights.order(day: :asc)
+    @bodyweights_graph = @user_bodyweights.where(day: search_date.in_time_zone.all_year)
   end
 
   def create

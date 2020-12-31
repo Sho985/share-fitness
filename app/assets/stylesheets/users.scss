@@ -384,7 +384,7 @@
     font-size: 1.3vw;
 
     .bodyweight-record{
-      // width: 35%;
+      margin-right: 1vw;
 
       .user-bodyweight-record{
         border-bottom: solid 1.5px #2C7CFF;
@@ -394,6 +394,7 @@
     .bodyweight-delete-link{
       display: flex;
       font-size: 1vw;
+      margin-bottom: 1vw;
     }
 
   }
