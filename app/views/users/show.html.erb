@@ -29,18 +29,10 @@
                 <span class="fas fa-weight"></span>
               <% end %>
             <% end %>  
-            <div class="relationship-button">
-              <% if @user.id != current_user.id %>
-                <% if @user.followed_by?(current_user) %>
-                  <div class="follow-button">
-                    <%=link_to "フォロー中", user_relationships_path(@user.id), method: :delete %>
-                  </div>
-                <% else %>
-                  <div class="unfollow-button">
-                    <%=link_to "フォローする", user_relationships_path(@user.id), method: :post %>
-                  </div>
-                <% end %>
-              <% end %>
+            <div class="f-button">
+              <div id="follow_buttons_<%= @user.id%>">
+                <%= render partial: 'relationships/follow', locals: { user: @user} %>
+              </div>
             </div>
           </div>
           <div class="user-created-at">
