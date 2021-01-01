@@ -168,15 +168,15 @@
               padding: 0 0.3vw;
             }
 
-            .relationship-button{
-              display: flex;
-              align-items: center;
-              font-size: 1vw;
-              width: 7.5vw;
-              margin-left: 1vw;
-              padding: 0;
-              // background-color: #BBFFFF;
-            }
+            // .relationship-button{
+            //   display: flex;
+            //   align-items: center;
+            //   font-size: 1vw;
+            //   width: 7.5vw;
+            //   margin-left: 1vw;
+            //   padding: 0;
+            //   // background-color: #BBFFFF;
+            // }
           }
 
           .user-self-introduction{
@@ -471,11 +471,6 @@
     .user-self-introduction{
       margin-top: 1vw;
     }
-
-    .f-button{
-      margin-left: auto;
-      margin-right: 2vw;
-    }
   }
 }
 //フォロー・フォロワーページ終了
@@ -505,6 +500,17 @@
 }
 
 //タイムライン終了
+
+
+//フォローボタン
+.f-button{
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 2vw;
+  font-size: 1vw;
+}
+//フォローボタン終了
 
 
 //PC用scss終了
