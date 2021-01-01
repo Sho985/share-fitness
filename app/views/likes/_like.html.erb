@@ -1,0 +1,9 @@
+<% if post.liked_by?(current_user)%>
+  <%= link_to post_likes_path(post.id), method: :delete, remote: true do %>
+    <span class="fas fa-thumbs-up like-btn-unlike">:<%= post.likes.count %></span>
+  <% end %>
+  <% else %>
+  <%= link_to post_likes_path(post.id), method: :post, remote: true do %>
+    <span class="fas fa-thumbs-up like-btn">:<%= post.likes.count %></span>
+  <% end %>
+<% end %>
