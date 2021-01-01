@@ -30,15 +30,9 @@
     <div class="post-reaction-box">
       <div class="post-reaction-content">
         <div class="post-like-button">
-          <% if post.liked_by?(current_user)%>
-            <%= link_to post_likes_path(post.id), method: :delete do %>
-              <span class="fas fa-thumbs-up like-btn-unlike">:<%= post.likes.count %></span>
-            <% end %>
-          <% else %>
-            <%= link_to post_likes_path(post.id), method: :post do %>
-              <span class="fas fa-thumbs-up like-btn">:<%= post.likes.count %></span>
-            <% end %>
-          <% end %>
+          <div id="likes_buttons_<%= post.id %>">
+            <%= render partial: 'likes/like', locals: { post: post} %>
+          </div>
         </div>
         <div class="post-comment-button">
           <%=link_to post_path(post.id) do %>
