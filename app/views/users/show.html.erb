@@ -3,7 +3,13 @@
     <div class="user-info-content">
       <div class="user-image-box">
         <div class="user-image">
-          <img src ='<%= @user.image %>' width="100%" height="100%" class="info-image">
+          <div class="info-image">
+            <% if @user.image? %>
+              <img src ='<%= @user.image %>' width="100%" height="100%" class="info-image">
+            <% else %>
+              <img src ="https://2.bp.blogspot.com/-3NTdiy0qbgY/VaMN5JhC4tI/AAAAAAAAvfs/njZ6gyBRmZM/s170/youngman_28.png"  class="info-image"> 
+            <% end %>  
+          </div>
           <div class="user-relationship-count">
             <div class="relationship">
               <%= link_to "フォロー中:#{@user.followings.count}", following_user_path(@user.id) %>
@@ -72,7 +78,13 @@
         <div class="question-list-box">
           <div class="question-list-contents">
             <div class="question-list-user-info">
-              <img src ='<%= question.user.image %>' class="question-user-image">
+              <div class="question-user-image">
+                <% if question.user.image? %>
+                  <img src ='<%= question.user.image %>' class="question-user-image">
+                <% else %>
+                  <img src ="https://2.bp.blogspot.com/-3NTdiy0qbgY/VaMN5JhC4tI/AAAAAAAAvfs/njZ6gyBRmZM/s170/youngman_28.png"  class="question-user-image"> 
+                <% end %>
+              </div>
               <div class="question-list-user-name">
               <%= link_to question.user.name, user_path(question.user) %>さん
               </div>

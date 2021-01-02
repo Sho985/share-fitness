@@ -6,7 +6,7 @@ class User < ApplicationRecord
   
   validates :name, presence: true, length:{maximum: 15}
   validates :self_introduction, presence: true, length:{maximum: 120}
-  validates :image, presence: true
+  # validates :image, presence: true
   
   #carriewave・Userモデルとの紐付け
   mount_uploader :image,  UserimageUploader

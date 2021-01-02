@@ -3,7 +3,11 @@
     <div class="question-container">
       <div class="question-user-info">
         <div class="question-user-image">
-          <img src ='<%= @question.user.image %>' class="question-user-image">
+          <% if @question.user.image? %>
+            <img src ='<%= @question.user.image %>' class="question-user-image">
+          <% else %>
+            <img src ="https://2.bp.blogspot.com/-3NTdiy0qbgY/VaMN5JhC4tI/AAAAAAAAvfs/njZ6gyBRmZM/s170/youngman_28.png"  class="question-user-image"> 
+          <% end %>
         </div>
         <div class="question-user-name">
           質問者:<%= link_to  @question.user.name, user_path(@question.user) %>さん
@@ -28,8 +32,12 @@
         <% end %>
       </div>
       <div class="question-answer-form-container">
-        <div>
-          <img src ='<%= current_user.image %>' class="answer-user-image">
+        <div class="answer-user-image">
+          <% if current_user.image? %>
+            <img src ='<%= current_user.image %>' class="answer-user-image">
+          <% else %>
+            <img src ="https://2.bp.blogspot.com/-3NTdiy0qbgY/VaMN5JhC4tI/AAAAAAAAvfs/njZ6gyBRmZM/s170/youngman_28.png"  class="answer-user-image"> 
+          <% end %>  
         </div>
         <%= form_with model: [@question, @answer] do |f| %>
           <%= f.text_area :answer_content, class: "answer-form"  %>
@@ -38,11 +46,17 @@
         <% end %>
       </div>
       <div class="answer-container">
-        <h2>回答一覧</h2>
+        <h2>回答・返信の一覧</h2>
         <% @question_answer.each do |answer| %>
           <div class="answer-box">
             <div class="answer-user-info">
-              <img src ='<%= answer.user.image %>' class="answer-user-image">
+              <div class="answer-user-image">
+                <% if answer.user.image? %>
+                  <img src ='<%= answer.user.image %>' class="answer-user-image">
+                <% else %>
+                  <img src ="https://2.bp.blogspot.com/-3NTdiy0qbgY/VaMN5JhC4tI/AAAAAAAAvfs/njZ6gyBRmZM/s170/youngman_28.png"  class="answer-user-image"> 
+                <% end %>
+              </div>
               <div class="answer-user-name">
                 <%=  link_to answer.user.name, user_path(answer.user.id) %>さん
                 <div><%= answer.created_at.strftime('%Y/%m/%d/%H:%M') %></div>
