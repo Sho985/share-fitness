@@ -1,14 +1,27 @@
-<div class="top-area">
-	<div class="top-description">
-		<p>Training record,</p>
-		<p>Share training</p>
-		<p>Let's get started!!</p>
-	</div>
-	<div class="buttons">
-		<ul>
-			<li><%= link_to "Login", new_user_session_path %></li>
-			<li><%= link_to "Signup", new_user_registration_path %></li>
-			<li>Test login</li>
-		</ul>
+<div class="top-page-container">
+	<div class="top-description-box">
+    <div class="top-description">
+      <div class="word">
+        <p>
+          <span class="word-line">
+            <i class="fas fa-dumbbell"></i>トレーニングを記録 & SNSの様に記録をシェア<i class="fas fa-dumbbell"></i>
+          </span>
+        </p>
+      </div>
+      <div class="word">
+        <p>
+          <span class="word-line">
+            <i class="far fa-comments"></i>トレーニングに関する疑問を質問・相談できる<i class="far fa-comments"></i>
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="user-login-box">
+    <div class="top-page-button">
+      <div class="link"><%= link_to "Login", new_user_session_path %></div>
+      <div class="link"><%= link_to "Signup", new_user_registration_path %></div>
+      <div class="link">Guest login</div>
+    </div>
   </div>
 </div>

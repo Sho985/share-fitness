@@ -3,7 +3,11 @@
 		<div class="app-name">
       <nav>
         <ul>
-          <li><%= link_to "Share | fitness", root_path %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to "Share | fitness", user_path(current_user) %></li>
+          <% else %>
+            <li><%= link_to "Share | fitness", root_path %></li>
+          <% end%>  
         </ul>
       </nav>
 		</div>
@@ -21,7 +25,6 @@
         <% else %>
           <li><%= link_to "Signup", new_user_registration_path %></li>
           <li><%= link_to "Login", new_user_session_path %></li>
-          <li><%= link_to "All Record", posts_path %></li>
         <% end%>
         </ul>
       </nav>
@@ -47,7 +50,6 @@
           <% else %>
             <li><%= link_to "Signup", new_user_registration_path %></li>
             <li><%= link_to "Login", new_user_session_path %></li>
-            <li><%= link_to "All Record", posts_path %></li>
           <% end%>
         </ul>
       </nav>
