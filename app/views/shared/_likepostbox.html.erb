@@ -3,7 +3,13 @@
     <div class="post-content-box">
       <div class="post-content">
         <div class="post-user-info">
-          <img src ='<%= post.user.image %>' class="post-user-image">
+          <div  class="post-user-image">
+            <% if post.user.image? %>  
+              <img src ='<%= post.user.image %>' class="post-user-image">
+            <% else %>
+              <img src ="https://2.bp.blogspot.com/-3NTdiy0qbgY/VaMN5JhC4tI/AAAAAAAAvfs/njZ6gyBRmZM/s170/youngman_28.png"  class="post-user-image"> 
+            <% end %>  
+          </div>
           <div class="post-user-name"><%= link_to post.user.name, user_path(post.user_id) %>さん</div>
         </div>
         <div class="post-user-comment">

@@ -168,6 +168,7 @@
               width: 2.7vw;
               height: 2.7vw;
               object-fit: contain;
+              border-radius: 50%;
             }
 
             .question-list-user-name{
@@ -271,13 +272,12 @@
         align-items: center;
         font-size: 1.1vw;
         border-bottom: dashed 1px;
-  
-  
+
         .question-user-image{
           width: 4vw;
           height: 4vw;
-          object-fit: contain;
           border-radius: 50%;
+          object-fit: contain;
         }
   
         .question-user-name{

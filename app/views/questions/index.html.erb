@@ -25,9 +25,15 @@
         <div class="question-list-box">
           <div class="question-list-contents">
             <div class="question-list-user-info">
-              <img src ='<%= question.user.image %>' class="question-user-image">
+              <div class="question-user-image">
+                <% if question.user.image? %>
+                  <img src ='<%= question.user.image %>' class="question-user-image">
+                <% else %>
+                  <img src ="https://2.bp.blogspot.com/-3NTdiy0qbgY/VaMN5JhC4tI/AAAAAAAAvfs/njZ6gyBRmZM/s170/youngman_28.png"  class="question-user-image"> 
+                <% end %>
+              </div>
               <div class="question-list-user-name">
-              <%= link_to question.user.name, user_path(question.user) %>さん
+                <%= link_to question.user.name, user_path(question.user) %>さん
               </div>
               <div class="qustion-created-data">
                 <%= question.created_at.strftime('%Y/%m/%d') %>
