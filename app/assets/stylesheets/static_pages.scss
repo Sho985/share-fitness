@@ -53,46 +53,66 @@ header{
   }
 }
 
-.top-area{
+.top-page-container{
+  padding-top: 1vw;
   width: 100%;
-  height: 100vh; 
+  height: 93vh; 
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(https://images.unsplash.com/photo-1583248839364-bd7430a3cd83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80);
+  // background-image: url(https://images.unsplash.com/photo-1583248839364-bd7430a3cd83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80);
+  background-image: url(https://cdn.pixabay.com/photo/2016/01/08/01/53/gymer-1126999_1280.jpg);
+  background-image: url(https://cdn.pixabay.com/photo/2015/01/10/17/32/physiotherapy-595529_1280.jpg);
+  // background-color:rgba(255,255,255,0.1);
+  // background-blend-mode:lighten;
 
-  .top-description{
-    padding-top: 3rem;
-    padding-left: 3rem;
-    padding-bottom: 3rem;
-    width: 50%;
-    word-break: break-all;
-    font-weight: bold;
-    color: white;
-    font-size: 1.5rem;
-    font-size: 3vw;
+  .top-description-box{
+    width: 60vw;
+    margin: 0 auto;
+
+    .top-description{
+      font-size: 1.8vw;
+      // font-weight: bold;
+      // text-shadow: 1px 2px 3px gray;
+
+      .word{
+        background-color:#EEEEEE ;
+        text-align: center;
+        // padding-left: 1vw;
+        box-shadow: 2px 2px 3px #444444;
+
+        // .word-line{
+        //   background: linear-gradient(transparent 80%, #77FFFF 80%);
+        // }
+      }
+    }
   }
 
-  .buttons ul{
-    list-style-type: none; 
-    padding-left: 3rem;
-    font-size: 1rem;
+  .user-login-box{
+    width: 60vw;
+    margin: 4vw auto;
+    font-size: 1.4vw;
 
-    li{
-      text-align: center; 
-      width: 150px;
-      padding: 10px 0;
-      margin: 20px 0;
-      vertical-align: middle;
-      background: #444444;
-      font-weight: bold;
-      color: #DDFFFF; 
+    .top-page-button{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .link{
+        min-width: 30vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color:#DDFFFF ;
+        box-shadow: 2px 2px 3px #444444;
+        margin-bottom: 4vw;
+      }
     }
   }
 
 }
 
-}
+
 
 #nav-drawer {
   display: none;
@@ -100,6 +120,9 @@ header{
 
 aside{
   min-width: 250px;
+}
+
+
 }
 //PC用終了
 
@@ -142,43 +165,62 @@ header{
   }
 }
 
-.top-area{
+.top-page-container{
+  padding-top: 8vw;
   width: 100%;
-  height: 100vh; 
+  height: 93vh; 
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(https://images.unsplash.com/photo-1583248839364-bd7430a3cd83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80);
+  // background-image: url(https://images.unsplash.com/photo-1583248839364-bd7430a3cd83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80);
+  background-image: url(https://cdn.pixabay.com/photo/2016/01/08/01/53/gymer-1126999_1280.jpg);
+  background-image: url(https://cdn.pixabay.com/photo/2015/01/10/17/32/physiotherapy-595529_1280.jpg);
+  // background-color:rgba(255,255,255,0.1);
+  // background-blend-mode:lighten;
 
-  .top-description{
-    padding-top: 3rem;
-    padding-left: 3rem;
-    width: 50%;
-    word-break: break-all;
-    font-weight: bold;
-    color: white;
-    //font-size: 1.8rem;
-    font-size: 3vw;
+  .top-description-box{
+    width: 85vw;
+    margin: 0 auto;
 
-    p::first-letter{
-      font-size: 1.5rem;
+    .top-description{
+      font-size: 3vw;
+      // font-weight: bold;
+      // text-shadow: 1px 2px 3px gray;
+
+      .word{
+        margin-top: 5vw;
+        background-color:#EEEEEE ;
+        text-align: center;
+        // padding-left: 1vw;
+        box-shadow: 2px 2px 3px #444444;
+
+        // .word-line{
+        //   background: linear-gradient(transparent 80%, #77FFFF 80%);
+        // }
+      }
     }
   }
 
-  .buttons ul{
-    list-style-type: none; 
-    padding-left: 3rem;
-    margin-top: 5rem;
+  .user-login-box{
+    width: 80vw;
+    margin: 6vw auto;
+    font-size: 1.8vw;
 
-    li{
-      text-align: center; 
-      width: 150px;
-      padding: 10px 0;
-      margin: 20px 0;
-      vertical-align: middle;
-      background: #444444;
-      font-weight: bold;
-      color: #DDFFFF; 
+    .top-page-button{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .link{
+        font-size: 3vw;
+        min-width: 70vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color:#DDFFFF ;
+        box-shadow: 2px 2px 3px #444444;
+        margin-bottom: 6vw;
+      }
     }
   }
 }
@@ -214,6 +256,7 @@ header{
     font-size: 4vw;
 
     ul{
+      margin-right: 10vw;
       list-style: none;
       line-height: 3;
     }
