@@ -38,4 +38,11 @@ class User < ApplicationRecord
     passive_relationships.find_by(following_id: user.id).present?
   end
 
+  def self.guest
+    #ゲストユーザーの作成・パスワードはランダムに設定
+    find_or_create_by!(email: 'guestuser@example.com',name: 'ゲストユーザー',self_introduction: 'ゲストユーザーです.') do |user|
+    user.password = SecureRandom.urlsafe_base64
+    end
+  end
+
 end
