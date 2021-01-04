@@ -1,12 +1,26 @@
+.calendar-container{
+  min-height: 100vh;
+  margin: 0 auto;
+  padding-top: 1vw;
+  // padding-right: 1vw;
+  // padding-left: 1vw;
+  background-image: url(https://images.unsplash.com/photo-1560780552-ba54683cb263?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
+}
+
 .simple-calendar{
+  margin: 0 auto;
+  width: 98%;
   font-family: 'Avenir Next',sans-serif;
+  background-color: #EEEEEE;
+  box-shadow: 2px 2px 4px gray;
 }
 
 .calendar-heading{
   font-size: 1.2vw;
   display: flex;
   justify-content: center;
-  background-color: #EEEEEE;
+  background-color: white;
+  font-weight: bold;
   font-family: 'Avenir Next',sans-serif;
 
   .calendar-nav{
