@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def show
     @user =User.find(params[:id])
     @posts =@user.posts.order(created_at: 'DESC')
-    @like_posts = @user.like_posts
+    @like_posts = @user.like_posts.order(created_at: 'DESC')
     @user_questions = @user.questions.order(created_at: 'DESC')
   end
 

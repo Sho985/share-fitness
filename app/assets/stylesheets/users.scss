@@ -167,20 +167,15 @@
               color: #888888;
               padding: 0 0.3vw;
             }
-
-            // .relationship-button{
-            //   display: flex;
-            //   align-items: center;
-            //   font-size: 1vw;
-            //   width: 7.5vw;
-            //   margin-left: 1vw;
-            //   padding: 0;
-            //   // background-color: #BBFFFF;
-            // }
           }
 
           .user-self-introduction{
             padding-top: 1vw;
+            font-size: 1.3vw;
+          }
+
+          .user-created-at{
+            // padding-top: 0.5vw;
             font-size: 1.3vw;
           }
         }
@@ -282,6 +277,7 @@
             width: 2.7vw;
             height: 2.7vw;
             object-fit: contain;
+            border-radius: 50%;
           }
 
           .question-list-user-name{
