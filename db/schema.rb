@@ -58,7 +58,6 @@ ActiveRecord::Schema.define(version: 2020_12_31_092934) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.datetime "start_time"
-    t.string "training_part"
   end
 
   create_table "questions", force: :cascade do |t|
