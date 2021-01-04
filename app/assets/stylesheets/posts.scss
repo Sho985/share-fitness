@@ -2,15 +2,16 @@
 // @media screen and (min-width:769px){
   //投稿ページと投稿編集ページ用のscss
   .post-form-background{
-    background-image: url(https://cdn.pixabay.com/photo/2015/11/13/03/26/dirty-1041382_1280.jpg);
+    // background-image: url(https://cdn.pixabay.com/photo/2015/11/13/03/26/dirty-1041382_1280.jpg);
+    background-image: url(https://images.unsplash.com/photo-1560780552-ba54683cb263?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
     min-height: 100vh; 
     height: auto;
     width: 100%;
     padding-top: 1vw;
     padding-bottom: 2vw;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
 
     .post-form-container{
       margin: auto;
