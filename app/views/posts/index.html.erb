@@ -18,5 +18,10 @@
   </div>
   <div class="post-box-container">
     <%= render 'shared/postbox' %>
-  <div>
+  </div>
+  <div class="paginate-container">
+    <div class="paginate">
+      <%= paginate @posts %> 
+    </div>
+  </div>
 </div>

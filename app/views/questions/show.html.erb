@@ -74,7 +74,12 @@
             </div>
           </div>
         <% end %>
-      </div> 
+      </div>
+      <div class="paginate-container">
+        <div class="paginate">
+          <%= paginate @question_answer %> 
+        </div>
+      </div>
     </div>
     <div class="question-show-side-container">
       <h2><span class="new-questions">新着の質問</span></h2>

@@ -5,9 +5,9 @@ class UsersController < ApplicationController
   
   def show
     @user =User.find(params[:id])
-    @posts =@user.posts.order(created_at: 'DESC')
-    @like_posts = @user.like_posts.order(created_at: 'DESC')
-    @user_questions = @user.questions.order(created_at: 'DESC')
+    @posts =@user.posts.order(created_at: 'DESC').page(params[:posts]).per(30)
+    @like_posts = @user.like_posts.order(created_at: 'DESC').page(params[:like_posts]).per(30)
+    @user_questions = @user.questions.order(created_at: 'DESC').page(params[:user_questions]).per(30)
   end
 
   def calendar
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   def timeline
     @user =User.find(params[:id])
     @following_users = @user.followings
-    @posts = Post.all.includes(:training_events).where(user_id: @following_users).order(created_at: 'DESC')
+    @posts = Post.all.includes(:training_events).where(user_id: @following_users).order(created_at: 'DESC').page(params[:page]).per(30)
   end
 
     private
