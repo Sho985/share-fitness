@@ -5,13 +5,13 @@ class PostsController < ApplicationController
 
   def index
     @q = Post.all.includes(:training_events).order(created_at: 'DESC').ransack(params[:q])
-    @posts = @q.result(distinct: true)
+    @posts = @q.result(distinct: true).page(params[:page]).per(30)
   end
 
   def show
-    @post = Post.includes(:training_events).find(params[:id])
+    @post = Post.all.includes(:training_events).find(params[:id])
     @comment = Comment.new
-    @comments = @post.comments
+    @comments = @post.comments.order(created_at: 'ASC').page(params[:page]).per(10)
   end
 
   def new 

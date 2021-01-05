@@ -3,14 +3,14 @@ class QuestionsController < ApplicationController
 
   def index
     @q = Question.all.ransack(params[:q])
-    @questions = @q.result(distinct: true)
+    @questions = @q.result(distinct: true).page(params[:page]).per(30)
   end
 
   def show
     @question = Question.find(params[:id])
     @questions = Question.all.order(created_at: 'DESC').limit(10)
     @answer = Answer.new
-    @question_answer = @question.answers.order(created_at: 'DESC')
+    @question_answer = @question.answers.order(created_at: 'ASC').page(params[:page]).per(20)
   end
 
   def new
