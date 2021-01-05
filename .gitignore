@@ -31,3 +31,6 @@
 
 #carriewaveで保存した画像
 public/uploads/
+
+#環境変数
+/.env

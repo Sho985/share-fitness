@@ -42,6 +42,8 @@ gem 'chartkick'
 gem 'groupdate'
 #画像をAmazonS3のバケットに保存する
 gem 'fog-aws'
+#環境変数の設定
+gem 'dotenv-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
