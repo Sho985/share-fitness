@@ -163,10 +163,11 @@
             margin-bottom: 1vw;
             border-bottom: solid 1px;
             width: 100%;
+            font-size: 1.1vw;
 
             .question-user-image{
-              width: 2.7vw;
-              height: 2.7vw;
+              width: 3.5vw;
+              height: 3.5vw;
               object-fit: contain;
               border-radius: 50%;
             }
@@ -174,12 +175,12 @@
             .question-list-user-name{
               margin-left: 1vw;
             }
-
-            .qustion-created-data{
-              margin-left: auto;
-            }
           }
 
+          .question-answer-count{
+            margin-left: auto;
+          }
+          
           .qustion-list-category{
             color: #666666;
           }
