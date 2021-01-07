@@ -1,24 +1,64 @@
-# README
+### 概要
+* 主にトレーニングの記録・記録のシェアを行うことができるアプリケーションです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### URL
+[Share|fitness](http://www.bookphrase.xyz/)
 
-Things you may want to cover:
+### 制作の動機
+* トレーニング初心者時代に他の人のトレーニング内容を知りたかったため。
 
-* Ruby version
+### 対象とするユーザー
+* トレーニングのモチベーションを向上させたい方
+* 他の人のトレーニング内容が気になる方
 
-* System dependencies
+### 機能一覧
+#### ユーザー機能
+* アカウント登録・編集・消去機能
+* ログイン・ゲストログイン
+* マイページ(トレーニング部位の割合を円グラフ確認することができます)
+<img width="1440" alt="スクリーンショット 2021-01-07 21 42 41" src="https://user-images.githubusercontent.com/65331640/103895482-d85baa00-5133-11eb-9f17-3365b4d07d05.png">
 
-* Configuration
+* ユーザーのフォロー・フォロワー機能
+* フォロー中の方の投稿のみを閲覧するページ
 
-* Database creation
+####　トレーニング記録の投稿機能
+* トレーニング記録の投稿・編集・削除機能(複数種目の登録,フォームの追加・削除を動的に行うことができます)
+<img width="1440" alt="スクリーンショット 2021-01-07 21 31 53" src="https://user-images.githubusercontent.com/65331640/103895564-f6290f00-5133-11eb-85af-98e4e164200d.png">
 
-* Database initialization
+* 種目ごとに重量の遷移を見ることができます(成長の可視化)
+<img width="1440" alt="スクリーンショット 2021-01-07 22 06 35" src="https://user-images.githubusercontent.com/65331640/103896031-af87e480-5134-11eb-8f43-3e042eee1616.png">
 
-* How to run the test suite
+* カレンダー機能(トレーニングした日・投稿のコメントの確認を一目で行うことができます。)
+* 他のユーザーの投稿の検索機能（トレーニング部位・種目で検索可能）
+* ページネーション機能
+* 投稿にいいね機能
+* 投稿に対してのコメント機能
 
-* Services (job queues, cache servers, search engines, etc.)
+####　フィットネス関連の疑問ついて質問・相談機能
+* 質問機能(編集・削除 可能)
+* 質問に対する返信・回答機能
 
-* Deployment instructions
+#### 体重記録機能
+* 体重の記録・削除機能
+* 体重のグラフ表示
 
-* ...
+
+
+### ER図
+<img width="1035" alt="スクリーンショット 2021-01-07 17 45 24" src="https://user-images.githubusercontent.com/65331640/103891874-ee666c00-512d-11eb-852b-9115c20afc04.png">
+
+### 使用言語・環境
+#### 開発言語
+* HTML
+* CSS
+* JavaScript / jQuery (Ajax) いいね機能・フォロー機能
+* Ruby 2.6.3
+* Ruby on Rails 5.2.4
+
+#### 開発環境
+* Docker
+* docker-compose
+* DB: PostgreSQL
+
+#### 本番環境
+* AWS(VPC, EC2[Nginx/Unicorn], RDS[PostgreSQL], Route53, ACM ,ALB)
