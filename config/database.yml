@@ -82,6 +82,7 @@ test:
 #
 production:
   <<: *default
-  database: share-fitness_production
-  username: share-fitness
-  password: <%= ENV['SHARE-FITNESS_DATABASE_PASSWORD'] %>
+  database: <%= ENV['DB_NAME'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: <%= ENV['DB_HOSTNAME'] %>
