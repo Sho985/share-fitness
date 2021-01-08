@@ -73,7 +73,11 @@
     <% @comments.each do |comment| %>
       <div class="user-comment-container">
         <div class="comment-user-image">
-          <img src ='<%= comment.user.image %>' width="100%" height="100%" class="comment-image">
+          <% if comment.user.image? %>
+            <img src ='<%= comment.user.image %>' width="100%" height="100%" class="comment-user-image">
+          <% else %>
+            <img src ="https://2.bp.blogspot.com/-3NTdiy0qbgY/VaMN5JhC4tI/AAAAAAAAvfs/njZ6gyBRmZM/s170/youngman_28.png"  class="comment-user-image"> 
+          <% end %>
         </div>
         <div class="comment-user-info">
           <%= comment.user.name %><br>
