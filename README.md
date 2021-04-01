@@ -2,7 +2,7 @@
 主にトレーニングの記録や管理・記録のシェアを行うことができるSNS系のアプリケーションです。
 
 ### URL
-[Share | fitness](https://www.share-fitness.xyz/)
+[Share | fitness](https://share-fitness.herokuapp.com/)
 
 ### 制作の動機
 自分自身がトレーニングを始めたての時に、どんなトレーニングをすれば良いのか悩んだことや、相談・質問をしたい、他の人のトレーニングを参考にしたいと思った経験があるため、開発をしました。    
